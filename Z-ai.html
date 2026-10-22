@@ -1,0 +1,3023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Doers Inspire — a creative technology studio. We build the digital side of businesses: brand, content, websites, growth, systems and AI.">
+    <title>DOERS INSPIRE — We Build the Digital Side</title>
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&f[]=satoshi@400,500,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
+    <style>
+        /* ============ TOKENS ============ */
+        :root {
+            --bg: #08080C;
+            --ink: #ECECF1;
+            --muted: #90909C;
+            --faint: #4E4E5A;
+            --line: rgba(236, 236, 241, .13);
+            --line-soft: rgba(236, 236, 241, .06);
+            --purple: #8E7BFF;
+            --cyan: #7ADFE8;
+            --fd: 'Clash Display', Georgia, sans-serif;
+            --fb: 'Satoshi', Helvetica, sans-serif;
+            --fm: 'IBM Plex Mono', monospace;
+            --g: clamp(20px, 4.5vw, 72px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%
+        }
+
+        @media(prefers-reduced-motion:no-preference) {
+            html {
+                scroll-behavior: smooth
+            }
+        }
+
+        html,
+        body {
+            overflow-x: clip
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font: 400 17px/1.6 var(--fb);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--purple);
+            color: #08080C
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0A0A0F
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #232330;
+            border-radius: 5px
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            font: inherit;
+            color: inherit;
+            background: none;
+            border: 0;
+            cursor: pointer
+        }
+
+        img {
+            display: block;
+            max-width: 100%
+        }
+
+        :focus-visible {
+            outline: 1px solid var(--cyan);
+            outline-offset: 4px
+        }
+
+        section {
+            scroll-margin-top: 64px
+        }
+
+        /* ============ UTILITIES ============ */
+        .wrap {
+            padding-inline: var(--g);
+            max-width: 1720px;
+            margin-inline: auto;
+            position: relative;
+            z-index: 2
+        }
+
+        .label {
+            font: 500 11px/1.5 var(--fm);
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--muted)
+        }
+
+        .label b {
+            color: var(--ink);
+            font-weight: 500
+        }
+
+        .rule {
+            height: 1px;
+            background: var(--line);
+            border: 0
+        }
+
+        .msk {
+            display: block;
+            overflow: hidden
+        }
+
+        .mline {
+            display: block;
+            will-change: transform
+        }
+
+        .rl {
+            display: block
+        }
+
+        .display-xl {
+            font: 600 clamp(52px, 10.5vw, 172px)/0.96 var(--fd);
+            letter-spacing: -.02em
+        }
+
+        .display-lg {
+            font: 600 clamp(40px, 7vw, 108px)/1 var(--fd);
+            letter-spacing: -.015em
+        }
+
+        .display-md {
+            font: 500 clamp(28px, 4.2vw, 60px)/1.05 var(--fd);
+            letter-spacing: -.01em
+        }
+
+        .atmo {
+            position: absolute;
+            inset: -15%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 0
+        }
+
+        .atmo::before,
+        .atmo::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%
+        }
+
+        .atmo::before {
+            width: 58vw;
+            height: 58vw;
+            top: -12%;
+            left: -14%;
+            background: radial-gradient(circle, rgba(142, 123, 255, .09), transparent 62%)
+        }
+
+        .atmo::after {
+            width: 48vw;
+            height: 48vw;
+            bottom: -16%;
+            right: -10%;
+            background: radial-gradient(circle, rgba(122, 223, 232, .06), transparent 62%)
+        }
+
+        .grain {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            pointer-events: none;
+            opacity: .045;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
+        }
+
+        html:not(.js) #intro {
+            display: none
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            font: 500 12px/1 var(--fm);
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            padding: 19px 30px;
+            border: 1px solid var(--line);
+            color: var(--ink);
+            transition: border-color .35s, background .35s, color .35s
+        }
+
+        .btn .ar {
+            transition: transform .35s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .btn:hover .ar {
+            transform: translateX(6px)
+        }
+
+        .btn-solid {
+            background: var(--ink);
+            color: #0A0A0F;
+            border-color: var(--ink)
+        }
+
+        .btn-solid:hover {
+            background: #fff;
+            border-color: #fff
+        }
+
+        .btn-ghost:hover {
+            border-color: rgba(236, 236, 241, .45)
+        }
+
+        .tlink {
+            font: 500 12px/1 var(--fm);
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--line);
+            transition: color .3s, border-color .3s;
+            display: inline-flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        .tlink:hover {
+            color: var(--ink);
+            border-color: rgba(236, 236, 241, .5)
+        }
+
+        .ar {
+            flex: none
+        }
+
+        /* ============ NAV ============ */
+        .nav {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 70;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 22px var(--g);
+            transition: padding .45s, background .45s, border-color .45s;
+            border-bottom: 1px solid transparent
+        }
+
+        .nav.scrolled {
+            padding: 12px var(--g);
+            background: rgba(8, 8, 12, .72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-color: var(--line-soft)
+        }
+
+        .brand {
+            font: 600 15px/1 var(--fd);
+            letter-spacing: .12em
+        }
+
+        .brand span {
+            color: var(--muted)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px
+        }
+
+        .nav-links a {
+            font: 500 11px/1 var(--fm);
+            letter-spacing: .18em;
+            color: var(--muted);
+            transition: color .3s
+        }
+
+        .nav-links a:hover {
+            color: var(--ink)
+        }
+
+        .nav-cta {
+            font: 500 11px/1 var(--fm);
+            letter-spacing: .16em;
+            border: 1px solid var(--line);
+            padding: 11px 18px;
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            transition: border-color .3s, background .3s
+        }
+
+        .nav-cta:hover {
+            border-color: rgba(236, 236, 241, .5)
+        }
+
+        .menu-btn {
+            display: none;
+            width: 40px;
+            height: 40px;
+            position: relative
+        }
+
+        .menu-btn i {
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            height: 1px;
+            background: var(--ink);
+            transition: transform .35s, top .35s
+        }
+
+        .menu-btn i:first-child {
+            top: 16px
+        }
+
+        .menu-btn i:last-child {
+            top: 24px
+        }
+
+        .menu-btn[aria-expanded="true"] i:first-child {
+            top: 20px;
+            transform: rotate(45deg)
+        }
+
+        .menu-btn[aria-expanded="true"] i:last-child {
+            top: 20px;
+            transform: rotate(-45deg)
+        }
+
+        .menu {
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: var(--g);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity .45s, visibility .45s
+        }
+
+        .menu.on {
+            visibility: visible;
+            opacity: 1
+        }
+
+        .menu a {
+            font: 600 clamp(38px, 9vw, 76px)/1.2 var(--fd);
+            letter-spacing: -.01em;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line-soft);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline
+        }
+
+        .menu a small {
+            font: 500 11px var(--fm);
+            letter-spacing: .2em;
+            color: var(--muted)
+        }
+
+        .menu .label {
+            margin-top: 36px
+        }
+
+        /* ============ INTRO ============ */
+        #intro {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: var(--bg);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--g)
+        }
+
+        html.motion #intro {
+            display: flex
+        }
+
+        .i-logo {
+            font: 600 clamp(26px, 4vw, 44px)/1.1 var(--fd);
+            letter-spacing: .28em
+        }
+
+        .i-logo .mline {
+            text-indent: .28em
+        }
+
+        .i-tag {
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: clamp(14px, 1.4vw, 17px)
+        }
+
+        .i-welcome {
+            margin-top: clamp(48px, 9vh, 96px);
+            font: 600 clamp(19px, 2.6vw, 34px)/1.25 var(--fd);
+            letter-spacing: .05em;
+            max-width: 22ch;
+            margin-inline: auto
+        }
+
+        .i-desc {
+            margin-top: 26px;
+            color: var(--muted);
+            max-width: 46ch;
+            margin-inline: auto;
+            font-size: clamp(15px, 1.4vw, 18px)
+        }
+
+        /* ============ HERO ============ */
+        #hero {
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding: 120px 0 90px;
+            overflow: clip
+        }
+
+        .hero-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: clamp(32px, 6vh, 72px)
+        }
+
+        .hero-title {
+            font: 600 clamp(54px, 10.5vw, 176px)/0.98 var(--fd);
+            letter-spacing: -.02em
+        }
+
+        .hero-title .ind {
+            padding-left: clamp(0px, 8vw, 150px)
+        }
+
+        #digitalSide .ch {
+            display: inline-block;
+            will-change: transform
+        }
+
+        .hero-foot {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 32px;
+            margin-top: clamp(40px, 7vh, 84px)
+        }
+
+        .hero-copy {
+            max-width: 52ch;
+            color: var(--muted);
+            font-size: clamp(15px, 1.3vw, 19px)
+        }
+
+        .hero-copy strong {
+            color: var(--ink);
+            font-weight: 500
+        }
+
+        .caps-line {
+            font: 500 11px/2 var(--fm);
+            letter-spacing: .22em;
+            color: var(--faint)
+        }
+
+        .caps-line i {
+            font-style: normal;
+            color: var(--faint);
+            padding-inline: 10px
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        .h-label {
+            position: absolute;
+            font: 500 10px/1 var(--fm);
+            letter-spacing: .22em;
+            color: var(--faint);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1
+        }
+
+        .h-label::before {
+            content: "";
+            width: 18px;
+            height: 1px;
+            background: var(--faint)
+        }
+
+        .scroll-cue {
+            position: absolute;
+            bottom: 26px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--faint)
+        }
+
+        .scroll-cue i {
+            width: 1px;
+            height: 38px;
+            background: var(--line);
+            overflow: hidden;
+            position: relative;
+            display: block
+        }
+
+        .scroll-cue i::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--ink);
+            animation: cue 2.2s ease-in-out infinite
+        }
+
+        @keyframes cue {
+            0% {
+                transform: translateY(-100%)
+            }
+
+            55% {
+                transform: translateY(0)
+            }
+
+            100% {
+                transform: translateY(100%)
+            }
+        }
+
+        /* ============ ECOSYSTEM ============ */
+        #eco {
+            overflow: clip
+        }
+
+        .eco-pin {
+            height: 100svh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 90px var(--g) 70px
+        }
+
+        .sec-tag {
+            position: absolute;
+            top: 96px;
+            left: var(--g);
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        .sec-tag::after {
+            content: "";
+            width: 56px;
+            height: 1px;
+            background: var(--line)
+        }
+
+        .eco-stage {
+            position: relative;
+            width: 100%;
+            height: min(58vh, 620px);
+            margin-top: 20px
+        }
+
+        .eco-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible
+        }
+
+        .eco-line {
+            stroke: rgba(236, 236, 241, .17);
+            stroke-width: 1;
+            vector-effect: non-scaling-stroke;
+            stroke-dasharray: 1;
+            stroke-dashoffset: 0
+        }
+
+        html.motion .eco-line {
+            stroke-dashoffset: 1
+        }
+
+        .eco-node {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap
+        }
+
+        .eco-node i {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--ink);
+            flex: none
+        }
+
+        .eco-node b {
+            font: 500 clamp(10px, 1vw, 13px)/1 var(--fm);
+            letter-spacing: .24em
+        }
+
+        .eco-node.acc-c i {
+            background: var(--cyan)
+        }
+
+        .eco-node.acc-p i {
+            background: var(--purple)
+        }
+
+        .eco-center {
+            flex-direction: column;
+            gap: 12px;
+            text-align: center
+        }
+
+        .eco-center b {
+            font: 500 clamp(16px, 1.7vw, 24px)/1.2 var(--fd);
+            letter-spacing: .1em
+        }
+
+        .eco-center i {
+            width: 7px;
+            height: 7px
+        }
+
+        .eco-caps {
+            position: absolute;
+            left: var(--g);
+            bottom: clamp(24px, 5vh, 48px);
+            max-width: 34ch
+        }
+
+        .eco-cap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font: 500 11px/1.9 var(--fm);
+            letter-spacing: .2em;
+            color: var(--muted);
+            text-transform: uppercase;
+            opacity: 0
+        }
+
+        .eco-final {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            pointer-events: none
+        }
+
+        .eco-final .mline {
+            font: 600 clamp(30px, 5.4vw, 84px)/1 var(--fd);
+            letter-spacing: -.01em
+        }
+
+        .eco-final p {
+            margin-top: 18px;
+            color: var(--muted);
+            opacity: 0
+        }
+
+        .eco-static {
+            display: none;
+            text-align: center;
+            margin-top: 36px
+        }
+
+        .eco-static b {
+            font: 600 clamp(28px, 4.6vw, 60px)/1.1 var(--fd)
+        }
+
+        .eco-static p {
+            color: var(--muted);
+            margin-top: 10px
+        }
+
+        html:not(.motion) .eco-caps {
+            display: none
+        }
+
+        html:not(.motion) .eco-static {
+            display: block
+        }
+
+        /* ============ CATEGORIES ============ */
+        #do {
+            padding: clamp(110px, 16vh, 200px) 0 clamp(90px, 13vh, 160px);
+            position: relative
+        }
+
+        #do .display-xl {
+            margin-top: 28px
+        }
+
+        #do .display-xl .rl:last-child {
+            padding-left: clamp(0px, 6vw, 110px)
+        }
+
+        .cats {
+            margin-top: clamp(56px, 9vh, 110px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .cat {
+            border-top: 1px solid var(--line);
+            transition: opacity .5s
+        }
+
+        .cats.has-active .cat:not(.active) {
+            opacity: .32
+        }
+
+        .cat-head {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 70px 1fr auto 40px;
+            align-items: baseline;
+            gap: 20px;
+            padding: 30px 0;
+            text-align: left
+        }
+
+        .cat-num {
+            font: 400 12px var(--fm);
+            color: var(--faint);
+            letter-spacing: .15em
+        }
+
+        .cat-name {
+            font: 600 clamp(30px, 4.6vw, 68px)/1 var(--fd);
+            letter-spacing: -.01em;
+            transition: transform .5s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .cat.active .cat-name {
+            transform: translateX(clamp(6px, 1.4vw, 22px))
+        }
+
+        .cat-tagline {
+            font: 500 11px/1.6 var(--fm);
+            letter-spacing: .18em;
+            color: var(--muted);
+            text-transform: uppercase;
+            text-align: right
+        }
+
+        .cat-x {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            justify-self: end;
+            align-self: center
+        }
+
+        .cat-x::before,
+        .cat-x::after {
+            content: "";
+            position: absolute;
+            background: var(--muted);
+            transition: transform .45s
+        }
+
+        .cat-x::before {
+            left: 0;
+            right: 0;
+            top: 7px;
+            height: 1px
+        }
+
+        .cat-x::after {
+            top: 0;
+            bottom: 0;
+            left: 7px;
+            width: 1px
+        }
+
+        .cat.active .cat-x::after {
+            transform: scaleY(0)
+        }
+
+        .cat-body {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows .65s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .cat.active .cat-body {
+            grid-template-rows: 1fr
+        }
+
+        .cat-inner {
+            overflow: hidden;
+            min-height: 0
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: 70px 1fr auto;
+            gap: 20px;
+            padding: 6px 0 46px
+        }
+
+        .cat-list {
+            list-style: none;
+            columns: 2;
+            max-width: 520px
+        }
+
+        .cat-list li {
+            font: 500 clamp(17px, 1.7vw, 24px)/1.2 var(--fd);
+            padding: 9px 0;
+            border-bottom: 1px solid var(--line-soft);
+            break-inside: avoid;
+            color: var(--ink)
+        }
+
+        .cat-note {
+            margin-top: 18px;
+            color: var(--muted);
+            max-width: 44ch;
+            font-size: 15px
+        }
+
+        .cat-viz {
+            padding-right: 8px
+        }
+
+        .cat-viz svg {
+            width: clamp(96px, 10vw, 132px);
+            height: auto;
+            overflow: visible;
+            display: block
+        }
+
+        .cat-viz * {
+            stroke: var(--faint);
+            fill: none;
+            stroke-width: 1
+        }
+
+        .cat-viz .ad {
+            fill: var(--cyan);
+            stroke: none
+        }
+
+        .cat-viz .ap {
+            fill: var(--purple);
+            stroke: none
+        }
+
+        .cat-viz .vz-sweep,
+        .cat-viz .vz-orbit {
+            transform-box: view-box;
+            transform-origin: 60px 60px
+        }
+
+        .cat-viz .vz-core {
+            transform-box: fill-box;
+            transform-origin: center
+        }
+
+        .cat.active .vz-sweep,
+        .cat.active .vz-orbit {
+            animation: spin 6s linear infinite
+        }
+
+        .cat.active .vz-core {
+            animation: pulse 2.2s ease-in-out infinite
+        }
+
+        .cat.active .vz-draw {
+            stroke-dasharray: 170;
+            animation: drawloop 3.4s ease-in-out infinite
+        }
+
+        .cat.active .vz-flow {
+            stroke-dasharray: 3 5;
+            animation: flow 1.1s linear infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.9)
+            }
+        }
+
+        @keyframes drawloop {
+            0% {
+                stroke-dashoffset: 170
+            }
+
+            45% {
+                stroke-dashoffset: 0
+            }
+
+            75% {
+                stroke-dashoffset: 0
+            }
+
+            100% {
+                stroke-dashoffset: -170
+            }
+        }
+
+        @keyframes flow {
+            to {
+                stroke-dashoffset: -16
+            }
+        }
+
+        /* ============ QUESTIONS ============ */
+        #questions {
+            position: relative
+        }
+
+        .q-pin {
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 100px var(--g) 80px;
+            overflow: clip
+        }
+
+        .q-head {
+            font: 600 clamp(44px, 8.4vw, 138px)/1 var(--fd);
+            letter-spacing: -.02em
+        }
+
+        .q-stage {
+            position: relative;
+            margin-top: clamp(30px, 5vh, 60px)
+        }
+
+        .q-pair {
+            padding: 16vh 0;
+            border-bottom: 1px solid var(--line-soft)
+        }
+
+        .q-pair:last-of-type {
+            border-bottom: 0
+        }
+
+        .q-count {
+            font: 400 12px var(--fm);
+            letter-spacing: .2em;
+            color: var(--faint);
+            margin-bottom: 20px
+        }
+
+        .q-q {
+            font: 600 clamp(34px, 6.2vw, 98px)/1.02 var(--fd);
+            letter-spacing: -.02em
+        }
+
+        .q-a {
+            margin-top: 22px;
+            font: 500 clamp(18px, 2vw, 28px)/1.3 var(--fd);
+            color: var(--muted);
+            padding-left: clamp(0px, 5vw, 90px)
+        }
+
+        .q-pair:nth-child(even) {
+            text-align: right
+        }
+
+        .q-pair:nth-child(even) .q-a {
+            padding-left: 0;
+            padding-right: clamp(0px, 5vw, 90px)
+        }
+
+        .q-final {
+            padding: 16vh 0
+        }
+
+        .q-final .q-q {
+            font-size: clamp(64px, 13vw, 220px)
+        }
+
+        html.motion .q-stage {
+            height: 56vh
+        }
+
+        html.motion .q-pair,
+        html.motion .q-final {
+            position: absolute;
+            inset: 0;
+            padding: 0;
+            border: 0;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        html.motion .q-final {
+            opacity: 0
+        }
+
+        /* ============ BUILDER ============ */
+        #build {
+            padding: clamp(110px, 16vh, 200px) 0;
+            position: relative
+        }
+
+        #build .display-lg {
+            margin-top: 28px
+        }
+
+        #build .display-lg .rl:last-child {
+            padding-left: clamp(0px, 6vw, 110px)
+        }
+
+        .builder {
+            margin-top: clamp(48px, 8vh, 90px);
+            min-height: 52vh
+        }
+
+        .builder-stage[aria-live] {
+            min-height: 300px
+        }
+
+        .b-q {
+            font: 600 clamp(26px, 3.8vw, 56px)/1.05 var(--fd);
+            letter-spacing: -.01em;
+            margin-bottom: clamp(28px, 4vh, 44px)
+        }
+
+        .bopt {
+            width: 100%;
+            display: flex;
+            align-items: baseline;
+            gap: 22px;
+            padding: clamp(16px, 2.4vh, 24px) 4px;
+            border-top: 1px solid var(--line);
+            font: 500 clamp(22px, 3.2vw, 44px)/1.1 var(--fd);
+            letter-spacing: -.01em;
+            text-align: left;
+            transition: padding-left .45s cubic-bezier(.22, 1, .36, 1), color .3s
+        }
+
+        .bopt:hover,
+        .bopt:focus-visible {
+            padding-left: clamp(12px, 2vw, 28px)
+        }
+
+        .bopt .ix {
+            font: 400 12px var(--fm);
+            color: var(--faint);
+            letter-spacing: .15em;
+            flex: none
+        }
+
+        .bopt .go {
+            margin-left: auto;
+            font: 400 12px var(--fm);
+            letter-spacing: .18em;
+            color: var(--faint);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: .4s
+        }
+
+        .bopt:hover .go {
+            opacity: 1;
+            transform: none
+        }
+
+        .bopts {
+            border-bottom: 1px solid var(--line)
+        }
+
+        .ack-big {
+            font: 600 clamp(40px, 7vw, 104px)/1 var(--fd);
+            letter-spacing: -.02em
+        }
+
+        .ack-small {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: clamp(16px, 1.5vw, 20px)
+        }
+
+        .b-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: clamp(28px, 5vh, 48px);
+            flex-wrap: wrap
+        }
+
+        .res-ctx {
+            font: 500 11px/1.8 var(--fm);
+            letter-spacing: .18em;
+            color: var(--faint);
+            text-transform: uppercase;
+            margin-bottom: clamp(30px, 5vh, 48px)
+        }
+
+        .res-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(28px, 5vw, 72px);
+            border-top: 1px solid var(--line);
+            padding-top: 28px
+        }
+
+        .res-col h4 {
+            font: 500 11px/1 var(--fm);
+            letter-spacing: .2em;
+            color: var(--muted);
+            margin-bottom: 8px
+        }
+
+        .res-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--line-soft);
+            font: 500 clamp(17px, 1.6vw, 23px)/1.2 var(--fd)
+        }
+
+        .res-item svg {
+            flex: none
+        }
+
+        .res-item.miss {
+            color: var(--muted)
+        }
+
+        .res-move {
+            margin-top: clamp(36px, 6vh, 56px)
+        }
+
+        .res-note {
+            margin-top: 26px;
+            color: var(--faint);
+            font-size: 13px;
+            max-width: 52ch
+        }
+
+        /* ============ WORK ============ */
+        #work {
+            padding: clamp(110px, 16vh, 200px) 0;
+            position: relative
+        }
+
+        #work .display-xl {
+            margin-top: 28px
+        }
+
+        #work .sub {
+            margin-top: 22px;
+            color: var(--muted)
+        }
+
+        .work-list {
+            margin-top: clamp(56px, 9vh, 100px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .wk-row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 74px 1fr auto;
+            align-items: baseline;
+            gap: 24px;
+            padding: clamp(24px, 4vh, 40px) 0;
+            border-top: 1px solid var(--line);
+            text-align: left;
+            transition: opacity .4s
+        }
+
+        .work-list:hover .wk-row:not(:hover) {
+            opacity: .35
+        }
+
+        .wk-num {
+            font: 400 12px var(--fm);
+            color: var(--faint);
+            letter-spacing: .15em
+        }
+
+        .wk-name {
+            font: 600 clamp(30px, 4.6vw, 64px)/1.05 var(--fd);
+            letter-spacing: -.01em;
+            transition: transform .5s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .wk-row:hover .wk-name {
+            transform: translateX(clamp(8px, 1.6vw, 24px))
+        }
+
+        .wk-side {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px
+        }
+
+        .wk-tags {
+            font: 500 10px/1 var(--fm);
+            letter-spacing: .2em;
+            color: var(--muted)
+        }
+
+        .wk-view {
+            font: 500 10px/1 var(--fm);
+            letter-spacing: .2em;
+            color: var(--faint);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: .4s
+        }
+
+        .wk-row:hover .wk-view {
+            opacity: 1;
+            transform: none
+        }
+
+        .work-preview {
+            position: fixed;
+            z-index: 40;
+            width: min(360px, 34vw);
+            aspect-ratio: 16/11;
+            pointer-events: none;
+            opacity: 0;
+            overflow: hidden;
+            transition: opacity .35s;
+            will-change: transform
+        }
+
+        .work-preview.on {
+            opacity: 1
+        }
+
+        .work-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(1) contrast(1.08) brightness(.85)
+        }
+
+        .work-preview::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(142, 123, 255, .16), rgba(122, 223, 232, .08) 60%, rgba(8, 8, 12, .3))
+        }
+
+        /* Case study overlay */
+        .ovl {
+            position: fixed;
+            inset: 0;
+            z-index: 90;
+            background: var(--bg);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity .5s, visibility .5s
+        }
+
+        .ovl.on {
+            visibility: visible;
+            opacity: 1
+        }
+
+        .ovl-bar {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px var(--g);
+            background: rgba(8, 8, 12, .82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line-soft)
+        }
+
+        .ovl-scroll {
+            position: absolute;
+            inset: 0;
+            overflow-y: auto;
+            overscroll-behavior: contain
+        }
+
+        .ovl-close {
+            font: 500 11px/1 var(--fm);
+            letter-spacing: .2em;
+            display: inline-flex;
+            gap: 12px;
+            align-items: center;
+            color: var(--muted);
+            transition: color .3s
+        }
+
+        .ovl-close:hover {
+            color: var(--ink)
+        }
+
+        .case-hero {
+            padding: clamp(60px, 10vh, 120px) var(--g) 0;
+            max-width: 1720px;
+            margin-inline: auto
+        }
+
+        .case-kicker {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 26px
+        }
+
+        .case-title {
+            font: 600 clamp(44px, 8vw, 124px)/1 var(--fd);
+            letter-spacing: -.02em
+        }
+
+        .case-what {
+            margin-top: 26px;
+            color: var(--muted);
+            max-width: 52ch;
+            font-size: clamp(16px, 1.5vw, 20px)
+        }
+
+        .case-img {
+            margin: clamp(40px, 7vh, 72px) var(--g) 0;
+            max-width: 1720px
+        }
+
+        .case-img img {
+            width: 100%;
+            aspect-ratio: 16/8;
+            object-fit: cover;
+            filter: grayscale(1) contrast(1.08) brightness(.8)
+        }
+
+        .case-img.wide {
+            position: relative
+        }
+
+        .case-img.wide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(150deg, rgba(142, 123, 255, .12), transparent 45%, rgba(122, 223, 232, .08))
+        }
+
+        .case-body {
+            max-width: 1100px;
+            margin: clamp(60px, 10vh, 110px) auto;
+            padding: 0 var(--g)
+        }
+
+        .beat {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 24px;
+            padding: clamp(30px, 5vh, 48px) 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .beat h3 {
+            font: 500 12px/1.7 var(--fm);
+            letter-spacing: .22em;
+            color: var(--muted)
+        }
+
+        .beat p {
+            font-size: clamp(17px, 1.7vw, 23px);
+            line-height: 1.55;
+            color: var(--ink)
+        }
+
+        .beat .stat {
+            font: 600 clamp(56px, 7vw, 104px)/1 var(--fd);
+            letter-spacing: -.02em;
+            color: var(--ink)
+        }
+
+        .beat .stat-l {
+            color: var(--muted);
+            font-size: 16px;
+            margin-top: 10px
+        }
+
+        .case-foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 40px var(--g) 80px;
+            max-width: 1100px;
+            margin-inline: auto;
+            flex-wrap: wrap
+        }
+
+        /* ============ LIBRARY ============ */
+        #library {
+            padding: clamp(110px, 16vh, 200px) 0;
+            position: relative
+        }
+
+        #library .display-lg {
+            margin-top: 28px
+        }
+
+        #library .sub {
+            margin-top: 20px;
+            color: var(--muted)
+        }
+
+        .lib-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 26px;
+            margin: clamp(40px, 6vh, 64px) 0 0;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .lib-tab {
+            font: 500 11px/1 var(--fm);
+            letter-spacing: .18em;
+            color: var(--faint);
+            padding: 8px 0;
+            transition: color .3s
+        }
+
+        .lib-tab:hover {
+            color: var(--muted)
+        }
+
+        .lib-tab.on {
+            color: var(--ink)
+        }
+
+        .lib-tab.on::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background: var(--purple);
+            margin-top: 7px
+        }
+
+        .lib-list {
+            border-bottom: 1px solid var(--line)
+        }
+
+        .lib-row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 74px 130px 1fr auto;
+            align-items: baseline;
+            gap: 24px;
+            text-align: left;
+            padding: 26px 0;
+            border-top: 1px solid var(--line);
+            transition: opacity .35s
+        }
+
+        .lib-list:hover .lib-row:not(:hover) {
+            opacity: .35
+        }
+
+        .lib-num {
+            font: 400 12px var(--fm);
+            color: var(--faint)
+        }
+
+        .lib-cat {
+            font: 500 10px/1 var(--fm);
+            letter-spacing: .2em;
+            color: var(--purple)
+        }
+
+        .lib-title {
+            font: 500 clamp(19px, 2.2vw, 30px)/1.25 var(--fd);
+            transition: transform .45s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .lib-row:hover .lib-title {
+            transform: translateX(12px)
+        }
+
+        .lib-meta {
+            font: 400 11px/1 var(--fm);
+            letter-spacing: .14em;
+            color: var(--faint);
+            white-space: nowrap
+        }
+
+        .read-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: clamp(50px, 8vh, 90px) var(--g) 90px
+        }
+
+        .read-body .label {
+            margin-bottom: 22px;
+            display: block
+        }
+
+        .read-title {
+            font: 600 clamp(34px, 4.6vw, 64px)/1.08 var(--fd);
+            letter-spacing: -.015em
+        }
+
+        .read-essay p {
+            margin-top: 26px;
+            font-size: clamp(17px, 1.6vw, 21px);
+            line-height: 1.7;
+            color: #C9C9D2
+        }
+
+        .read-foot {
+            margin-top: 44px
+        }
+
+        /* ============ ABOUT ============ */
+        #about {
+            padding: clamp(100px, 14vh, 180px) 0
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: clamp(32px, 6vw, 100px);
+            margin-top: 34px
+        }
+
+        .about-txt p {
+            font: 500 clamp(21px, 2.5vw, 34px)/1.45 var(--fd);
+            letter-spacing: -.005em;
+            color: var(--ink)
+        }
+
+        .about-txt p+p {
+            margin-top: 26px;
+            color: var(--muted);
+            font: 400 clamp(15px, 1.3vw, 18px)/1.7 var(--fb)
+        }
+
+        .about-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 14px
+        }
+
+        /* ============ FINAL ============ */
+        #final {
+            padding: clamp(130px, 20vh, 240px) 0 clamp(90px, 13vh, 150px);
+            text-align: center;
+            position: relative
+        }
+
+        #final .logo-sm {
+            font: 600 13px/1 var(--fd);
+            letter-spacing: .34em;
+            text-indent: .34em;
+            color: var(--muted)
+        }
+
+        #final .f-so {
+            margin-top: clamp(48px, 9vh, 90px);
+            font: 600 clamp(52px, 9vw, 150px)/1 var(--fd);
+            letter-spacing: -.02em
+        }
+
+        #final .f-q {
+            font: 600 clamp(40px, 7.4vw, 120px)/1.02 var(--fd);
+            letter-spacing: -.02em;
+            margin-top: 10px
+        }
+
+        #final .f-copy {
+            margin-top: 30px;
+            color: var(--muted)
+        }
+
+        #final .btn {
+            margin-top: 44px
+        }
+
+        .f-statement {
+            margin-top: clamp(80px, 14vh, 150px)
+        }
+
+        .f-statement .rl+.rl {
+            margin-top: 6px
+        }
+
+        .f-statement .mline {
+            font: 600 clamp(26px, 4vw, 58px)/1.15 var(--fd);
+            letter-spacing: -.01em
+        }
+
+        .f-statement .rl:last-child .mline {
+            color: var(--muted)
+        }
+
+        #final .logo-end {
+            margin-top: clamp(70px, 12vh, 130px);
+            font: 600 15px/1 var(--fd);
+            letter-spacing: .4em;
+            text-indent: .4em
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: clamp(48px, 8vh, 80px) var(--g) 36px;
+            position: relative;
+            z-index: 2
+        }
+
+        .foot-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 44px;
+            max-width: 1720px;
+            margin-inline: auto
+        }
+
+        .foot-brand .brand {
+            font-size: 19px
+        }
+
+        .foot-brand p {
+            color: var(--muted);
+            margin-top: 12px;
+            font-size: 15px
+        }
+
+        .foot-col h5 {
+            font: 500 10px/1 var(--fm);
+            letter-spacing: .22em;
+            color: var(--faint);
+            margin-bottom: 18px
+        }
+
+        .foot-col a {
+            display: block;
+            color: var(--muted);
+            padding: 6px 0;
+            font-size: 15px;
+            transition: color .3s
+        }
+
+        .foot-col a:hover {
+            color: var(--ink)
+        }
+
+        .foot-base {
+            max-width: 1720px;
+            margin: 56px auto 0;
+            padding-top: 22px;
+            border-top: 1px solid var(--line-soft);
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            font: 400 11px/1.6 var(--fm);
+            letter-spacing: .14em;
+            color: var(--faint)
+        }
+
+        .foot-base a {
+            color: var(--faint)
+        }
+
+        .foot-base a:hover {
+            color: var(--muted)
+        }
+
+        /* ============ CONTACT MODAL / TOAST ============ */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 110;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(8, 8, 12, .84);
+            visibility: hidden;
+            opacity: 0;
+            transition: .4s
+        }
+
+        .modal.on {
+            visibility: visible;
+            opacity: 1
+        }
+
+        .modal-card {
+            width: min(620px, 94vw);
+            background: #0C0C13;
+            border: 1px solid var(--line);
+            padding: clamp(30px, 5vw, 54px);
+            position: relative
+        }
+
+        .modal-card .x {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            font: 500 11px var(--fm);
+            letter-spacing: .18em;
+            color: var(--muted);
+            padding: 8px
+        }
+
+        .modal-card .x:hover {
+            color: var(--ink)
+        }
+
+        .modal-card h3 {
+            font: 600 clamp(30px, 4vw, 46px)/1.05 var(--fd);
+            margin-top: 16px
+        }
+
+        .modal-card>p {
+            color: var(--muted);
+            margin-top: 14px
+        }
+
+        .c-email {
+            margin-top: 34px;
+            font: 600 clamp(20px, 3vw, 32px)/1.2 var(--fd);
+            letter-spacing: .02em;
+            word-break: break-all
+        }
+
+        .c-actions {
+            display: flex;
+            gap: 14px;
+            margin-top: 28px;
+            flex-wrap: wrap
+        }
+
+        .c-note {
+            margin-top: 28px;
+            color: var(--faint);
+            font-size: 13px
+        }
+
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 30px;
+            transform: translate(-50%, 16px);
+            opacity: 0;
+            z-index: 300;
+            pointer-events: none;
+            background: #14141C;
+            border: 1px solid var(--line);
+            padding: 14px 24px;
+            font: 500 11px/1 var(--fm);
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            transition: .45s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .toast.on {
+            opacity: 1;
+            transform: translate(-50%, 0)
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media(max-width:1024px) {
+            .cat-head {
+                grid-template-columns: 48px 1fr 40px
+            }
+
+            .cat-tagline {
+                display: none
+            }
+
+            .cat-grid {
+                grid-template-columns: 48px 1fr
+            }
+
+            .cat-viz {
+                grid-column: 2
+            }
+
+            .beat {
+                grid-template-columns: 1fr;
+                gap: 12px
+            }
+        }
+
+        @media(max-width:760px) {
+            .nav-links {
+                display: none
+            }
+
+            .nav .nav-cta span {
+                display: none
+            }
+
+            .nav .nav-cta {
+                padding: 11px 13px
+            }
+
+            .menu-btn {
+                display: block
+            }
+
+            .h-label {
+                display: none
+            }
+
+            .hero-foot {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .eco-stage {
+                height: min(52vh, 480px)
+            }
+
+            .eco-node b {
+                letter-spacing: .16em
+            }
+
+            .cat-list {
+                columns: 1;
+                max-width: none
+            }
+
+            .wk-row {
+                grid-template-columns: 44px 1fr;
+                row-gap: 10px
+            }
+
+            .wk-side {
+                grid-column: 2;
+                flex-direction: row;
+                align-items: center;
+                gap: 14px
+            }
+
+            .wk-view {
+                opacity: 1;
+                transform: none
+            }
+
+            .lib-row {
+                grid-template-columns: 44px 1fr;
+                row-gap: 8px
+            }
+
+            .lib-cat {
+                grid-column: 2
+            }
+
+            .lib-meta {
+                grid-column: 2
+            }
+
+            .res-grid {
+                grid-template-columns: 1fr
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr
+            }
+
+            .foot-grid {
+                grid-template-columns: 1fr;
+                gap: 36px
+            }
+
+            .work-preview {
+                display: none
+            }
+
+            .q-pair {
+                padding: 11vh 0
+            }
+
+            .scroll-cue {
+                display: none
+            }
+        }
+
+        /* ============ REDUCED MOTION ============ */
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important
+            }
+
+            .scroll-cue i::after {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- INTRO (Screen 01) -->
+    <div id="intro" aria-hidden="true">
+        <div>
+            <div class="i-logo rl"><span class="msk"><span class="mline">DOERS INSPIRE</span></span></div>
+            <p class="i-tag rl"><span class="msk"><span class="mline">Good work deserves to be seen.</span></span></p>
+            <div class="i-welcome rl"><span class="msk"><span class="mline">WELCOME TO WHERE WHAT YOU BUILD MEETS THE
+                        WORLD.</span></span></div>
+            <p class="i-desc rl"><span class="msk"><span class="mline">We build the digital side of businesses — from
+                        brand and content to websites, growth, systems and AI.</span></span></p>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <header class="nav" id="nav">
+        <a class="brand" href="#top" aria-label="Doers Inspire — home">DOERS <span>INSPIRE</span></a>
+        <nav class="nav-links" aria-label="Primary">
+            <a href="#work">WORK</a>
+            <a href="#library">LIBRARY</a>
+            <a href="#about">ABOUT</a>
+        </nav>
+        <div style="display:flex;gap:14px;align-items:center">
+            <button class="nav-cta magnet" data-open-contact>START BUILDING
+                <svg class="ar" width="14" height="9" viewBox="0 0 16 10" aria-hidden="true">
+                    <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                </svg>
+            </button>
+            <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu"
+                aria-label="Open menu"><i></i><i></i></button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="menu" id="menu" aria-hidden="true">
+        <a href="#work">WORK <small>07</small></a>
+        <a href="#library">LIBRARY <small>08</small></a>
+        <a href="#about">ABOUT <small>09</small></a>
+        <a href="#build">START BUILDING <small>→</small></a>
+        <p class="label">GOOD WORK DESERVES TO BE SEEN.</p>
+    </div>
+
+    <main id="top">
+
+        <!-- SCREEN 02 — HERO -->
+        <section id="hero" class="hero" data-manual data-atmo>
+            <div class="atmo" id="atmoHero"></div>
+            <span class="h-label" data-depth=".7" style="top:17%;left:6%">BRAND</span>
+            <span class="h-label" data-depth=".45" style="top:15%;right:9%">CONTENT</span>
+            <span class="h-label" data-depth=".6" style="top:46%;left:3.5%">SOCIAL</span>
+            <span class="h-label" data-depth=".4" style="top:44%;right:4%">WEB</span>
+            <span class="h-label" data-depth=".55" style="bottom:20%;left:16%">SEARCH</span>
+            <span class="h-label" data-depth=".5" style="bottom:15%;right:17%">GROWTH</span>
+
+            <div class="wrap">
+                <div class="hero-grid hi">
+                    <p class="label">( 01 ) — <b>A CREATIVE TECHNOLOGY STUDIO</b></p>
+                    <p class="label">FOR PEOPLE BUILDING<br>SOMETHING REAL</p>
+                </div>
+                <h1 class="hero-title">
+                    <span class="rl"><span class="msk"><span class="mline">YOU BUILD.</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">WE BUILD THE</span></span></span>
+                    <span class="rl ind"><span class="msk"><span class="mline" id="digitalSide">DIGITAL
+                                SIDE.</span></span></span>
+                </h1>
+                <div class="hero-foot">
+                    <div class="hi">
+                        <p class="hero-copy"><strong>We build the digital side of businesses</strong> — from brand and
+                            content to websites, growth, systems and AI. For businesses, founders, creators and people
+                            building something real.</p>
+                        <p class="caps-line hi" style="margin-top:22px">
+                            BRAND<i>·</i>CONTENT<i>·</i>WEBSITE<i>·</i>GROWTH<i>·</i>SYSTEMS<i>·</i>AI</p>
+                    </div>
+                    <div class="hero-ctas hi">
+                        <a class="btn btn-solid magnet" href="#build">WHAT ARE YOU BUILDING?
+                            <svg class="ar" width="16" height="10" viewBox="0 0 16 10" aria-hidden="true">
+                                <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                            </svg></a>
+                        <a class="btn btn-ghost magnet" href="#work">SEE WHAT WE BUILD
+                            <svg class="ar" width="16" height="10" viewBox="0 0 16 10" aria-hidden="true">
+                                <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-cue hi" aria-hidden="true"><span class="label" style="font-size:9px">SCROLL</span><i></i>
+            </div>
+        </section>
+
+        <!-- SCREEN 03 — DIGITAL ECOSYSTEM -->
+        <section id="eco" data-manual>
+            <div class="eco-pin">
+                <p class="sec-tag label">( 03 ) — <b>THE DIGITAL SIDE</b></p>
+                <div class="eco-stage" id="ecoStage">
+                    <svg class="eco-svg" id="ecoSvg" viewBox="0 0 100 100" preserveAspectRatio="none"
+                        aria-hidden="true"></svg>
+                    <div class="eco-final" id="ecoFinal" aria-hidden="true">
+                        <span class="msk"><span class="mline">ONE DIGITAL SIDE.</span></span>
+                        <p>Everything works better when it works together.</p>
+                    </div>
+                </div>
+                <div class="eco-caps" aria-hidden="true">
+                    <p class="eco-cap">EVERY BUSINESS STARTS AS ONE THING.</p>
+                    <p class="eco-cap">THEN IT NEEDS A FACE. A VOICE. A HOME.</p>
+                    <p class="eco-cap">THEN IT NEEDS TO BE FOUND — AND TO GROW.</p>
+                    <p class="eco-cap">THEN IT NEEDS TO RUN WITHOUT FRICTION.</p>
+                    <p class="eco-cap">THEN IT STARTS TO LEARN.</p>
+                </div>
+                <div class="eco-static">
+                    <b>ONE DIGITAL SIDE.</b>
+                    <p>Everything works better when it works together.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 04 — WHAT DO WE DO -->
+        <section id="do" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 04 ) — <b>CAPABILITIES</b></p>
+                <h2 class="display-xl" style="margin-top:28px">
+                    <span class="rl"><span class="msk"><span class="mline">SO…</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">WHAT DO WE</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">ACTUALLY DO?</span></span></span>
+                </h2>
+                <div class="cats" id="cats">
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">01</span><span class="cat-name">PRESENCE</span>
+                            <span class="cat-tagline">MAKE YOUR BUSINESS VISIBLE.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>Brand</li>
+                                            <li>Content</li>
+                                            <li>Website</li>
+                                            <li>Social</li>
+                                            <li>Search</li>
+                                        </ul>
+                                        <p class="cat-note">If people can't find you, they can't choose you. We build
+                                            the face, the voice and the home your business shows to the world.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <circle cx="60" cy="60" r="20" />
+                                            <circle cx="60" cy="60" r="38" />
+                                            <circle cx="60" cy="60" r="54" />
+                                            <g class="vz-sweep">
+                                                <line x1="60" y1="60" x2="60" y2="6" />
+                                                <circle class="ad" cx="60" cy="12" r="3" />
+                                            </g>
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">02</span><span class="cat-name">GROWTH</span>
+                            <span class="cat-tagline">TURN VISIBILITY INTO OPPORTUNITY.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>SEO</li>
+                                            <li>Campaigns</li>
+                                            <li>Ads</li>
+                                            <li>Funnels</li>
+                                            <li>Conversion</li>
+                                        </ul>
+                                        <p class="cat-note">Attention is only step one. We build the paths that turn
+                                            strangers into enquiries — and enquiries into work.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <path class="vz-draw" d="M10 96 L44 62 L70 78 L110 26" />
+                                            <circle class="ap" cx="110" cy="26" r="3.5" />
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">03</span><span class="cat-name">SYSTEMS</span>
+                            <span class="cat-tagline">MAKE THE DIGITAL SIDE WORK BETTER.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>CRM</li>
+                                            <li>Automation</li>
+                                            <li>Workflows</li>
+                                            <li>Analytics</li>
+                                        </ul>
+                                        <p class="cat-note">The unglamorous layer that makes everything else scale. Less
+                                            copying, less chasing, fewer things falling through.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <rect x="12" y="16" width="32" height="22" />
+                                            <rect x="76" y="16" width="32" height="22" />
+                                            <rect x="44" y="82" width="32" height="22" />
+                                            <line class="vz-flow" x1="44" y1="27" x2="76" y2="27" />
+                                            <path class="vz-flow" d="M28 38 L28 60 L52 60 L52 82" />
+                                            <path class="vz-flow" d="M92 38 L92 60 L68 60 L68 82" />
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">04</span><span class="cat-name">AI</span>
+                            <span class="cat-tagline">PUT AI TO WORK.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>Research</li>
+                                            <li>Content</li>
+                                            <li>Support</li>
+                                            <li>Agents</li>
+                                            <li>Automation</li>
+                                        </ul>
+                                        <p class="cat-note">No demos, no hype. We find the repetitive 30% of your
+                                            operation and hand it to machines — so people do the part only they can.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <line x1="60" y1="18" x2="60" y2="102" />
+                                            <line x1="18" y1="60" x2="102" y2="60" />
+                                            <circle cx="60" cy="18" r="3" />
+                                            <circle cx="102" cy="60" r="3" />
+                                            <circle cx="60" cy="102" r="3" />
+                                            <circle cx="18" cy="60" r="3" />
+                                            <circle class="ap vz-core" cx="60" cy="60" r="5" />
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">05</span><span class="cat-name">THINK</span>
+                            <span class="cat-tagline">UNDERSTAND BEFORE YOU BUILD.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>Business</li>
+                                            <li>Psychology</li>
+                                            <li>Technology</li>
+                                            <li>Experiments</li>
+                                        </ul>
+                                        <p class="cat-note">Every build starts with questions, not deliverables. What's
+                                            actually broken, what's actually working, what's worth doing at all.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <rect x="38" y="38" width="44" height="44" transform="rotate(45 60 60)" />
+                                            <g class="vz-orbit">
+                                                <circle class="ad" cx="60" cy="14" r="3" />
+                                            </g>
+                                            <circle cx="60" cy="60" r="3" />
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 05 — GOT A QUESTION -->
+        <section id="questions" data-manual>
+            <div class="q-pin">
+                <p class="sec-tag label" style="position:static;margin-bottom:26px">( 05 ) — <b>QUESTIONS</b></p>
+                <h2 class="q-head rl"><span class="msk"><span class="mline">GOT A QUESTION?</span></span></h2>
+                <div class="q-stage" id="qStage">
+                    <div class="q-pair">
+                        <p class="q-count">Q.01 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">HOW SHOULD</span></span><span
+                                class="msk"><span class="mline">MY BRAND LOOK?</span></span></h3>
+                        <p class="q-a">Let's shape it.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.02 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">WHAT</span></span><span class="msk"><span
+                                    class="mline">SHOULD I SAY?</span></span></h3>
+                        <p class="q-a">Let's find your voice.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.03 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">DO I NEED</span></span><span
+                                class="msk"><span class="mline">A WEBSITE?</span></span></h3>
+                        <p class="q-a">Let's figure it out.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.04 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">WHY AREN'T PEOPLE</span></span><span
+                                class="msk"><span class="mline">FINDING ME?</span></span></h3>
+                        <p class="q-a">Let's fix the visibility.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.05 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">HOW DO I GET</span></span><span
+                                class="msk"><span class="mline">MORE ENQUIRIES?</span></span></h3>
+                        <p class="q-a">Let's build the path.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.06 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">SHOULD I</span></span><span
+                                class="msk"><span class="mline">RUN ADS?</span></span></h3>
+                        <p class="q-a">Let's find where they help.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.07 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">WHAT CAN</span></span><span
+                                class="msk"><span class="mline">I AUTOMATE?</span></span></h3>
+                        <p class="q-a">Let's build the system.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.08 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">WHERE CAN</span></span><span
+                                class="msk"><span class="mline">AI HELP?</span></span></h3>
+                        <p class="q-a">Let's put it to work.</p>
+                    </div>
+                    <div class="q-final">
+                        <p class="q-count">—</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">GOOD.</span></span></h3>
+                        <p class="q-a">That's where building starts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 06 — DIAGNOSTIC -->
+        <section id="build" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 06 ) — <b>YOUR STARTING POINT</b></p>
+                <h2 class="display-lg" style="margin-top:28px">
+                    <span class="rl"><span class="msk"><span class="mline">WHAT ARE</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">YOU BUILDING?</span></span></span>
+                </h2>
+                <div class="builder">
+                    <div class="builder-stage" id="builderStage" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 07 — WORK -->
+        <section id="work" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 07 ) — <b>SELECTED WORK</b></p>
+                <h2 class="display-xl" style="margin-top:28px">
+                    <span class="rl"><span class="msk"><span class="mline">THINGS WE'VE BUILT.</span></span></span>
+                </h2>
+                <p class="sub rv">Real work. Real decisions. Real outcomes.</p>
+                <div class="work-list" id="workList"></div>
+            </div>
+        </section>
+
+        <!-- SCREEN 08 — LIBRARY -->
+        <section id="library" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 08 ) — <b>THE LIBRARY</b></p>
+                <h2 class="display-lg" style="margin-top:28px">
+                    <span class="rl"><span class="msk"><span class="mline">THE DOERS LIBRARY</span></span></span>
+                </h2>
+                <p class="sub rv">Things worth knowing when you're building.</p>
+                <div class="lib-tabs" id="libTabs" role="tablist" aria-label="Filter library"></div>
+                <div class="lib-list" id="libList"></div>
+            </div>
+        </section>
+
+        <!-- SCREEN 09 — ABOUT -->
+        <section id="about">
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 09 ) — <b>ABOUT</b></p>
+                <div class="about-grid">
+                    <div class="about-meta rv">
+                        <span class="label">A SMALL STUDIO<br>OF DOERS</span>
+                        <span class="label" style="color:var(--faint)">WORKING WITH BUSINESSES<br>EVERYWHERE</span>
+                    </div>
+                    <div class="about-txt">
+                        <p class="rl"><span class="msk"><span class="mline">Doers Inspire exists because good work kept
+                                    going unseen. Decent businesses, real skill, nothing to show for it
+                                    online.</span></span></p>
+                        <p class="rv">So we build the digital side — the brand, the site, the content, the systems, the
+                            AI — while you keep building the real thing. No account managers. No decks that go nowhere.
+                            People who build, building with you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 10 — FINAL -->
+        <section id="final" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="logo-sm rv">DOERS INSPIRE</p>
+                <p class="f-so rl"><span class="msk"><span class="mline">SO…</span></span></p>
+                <h2 class="f-q">
+                    <span class="rl"><span class="msk"><span class="mline">WHAT ARE</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">YOU BUILDING?</span></span></span>
+                </h2>
+                <p class="f-copy rv">Tell us what you're working on.</p>
+                <button class="btn btn-solid magnet rv" data-open-contact>START BUILDING
+                    <svg class="ar" width="16" height="10" viewBox="0 0 16 10" aria-hidden="true">
+                        <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                    </svg></button>
+                <div class="f-statement">
+                    <p class="rl"><span class="msk"><span class="mline">YOU BUILD THE REAL THING.</span></span></p>
+                    <p class="rl"><span class="msk"><span class="mline">WE BUILD THE DIGITAL SIDE.</span></span></p>
+                </div>
+                <p class="logo-end rv">DOERS INSPIRE</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="foot-grid">
+            <div class="foot-brand">
+                <span class="brand">DOERS <span>INSPIRE</span></span>
+                <p>Good work deserves to be seen.</p>
+            </div>
+            <div class="foot-col">
+                <h5>STUDIO</h5>
+                <a href="#work">WORK</a>
+                <a href="#library">LIBRARY</a>
+                <a href="#about">ABOUT</a>
+            </div>
+            <div class="foot-col">
+                <h5>CONNECT</h5>
+                <a href="#" data-open-contact>START BUILDING →</a>
+                <a href="#" data-social>LINKEDIN</a>
+                <a href="#" data-social>INSTAGRAM</a>
+                <a href="#" data-social>X</a>
+            </div>
+        </div>
+        <div class="foot-base">
+            <span>© <span id="yr">2025</span> DOERS INSPIRE</span>
+            <span><a href="#" data-legal>PRIVACY</a> &nbsp;·&nbsp; <a href="#" data-legal>TERMS</a></span>
+        </div>
+    </footer>
+
+    <!-- FLOATING WORK PREVIEW -->
+    <div class="work-preview" id="workPreview" aria-hidden="true"><img alt=""></div>
+
+    <!-- CASE STUDY OVERLAY -->
+    <div class="ovl" id="caseOvl" role="dialog" aria-modal="true" aria-label="Case study">
+        <div class="ovl-scroll" id="caseScroll">
+            <div class="ovl-bar"><span class="label">DOERS <b>INSPIRE</b> — CASE STUDY</span>
+                <button class="ovl-close" data-close>CLOSE
+                    <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                        <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" />
+                    </svg></button>
+            </div>
+            <div id="caseBody"></div>
+        </div>
+    </div>
+
+    <!-- READING OVERLAY -->
+    <div class="ovl" id="readOvl" role="dialog" aria-modal="true" aria-label="Library article">
+        <div class="ovl-scroll">
+            <div class="ovl-bar"><span class="label">DOERS <b>INSPIRE</b> — LIBRARY</span>
+                <button class="ovl-close" data-close>CLOSE
+                    <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                        <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" />
+                    </svg></button>
+            </div>
+            <div class="read-body" id="readBody"></div>
+        </div>
+    </div>
+
+    <!-- CONTACT MODAL -->
+    <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-label="Start building">
+        <div class="modal-card">
+            <button class="x" data-close aria-label="Close">CLOSE ×</button>
+            <p class="label">( → ) — <b>START BUILDING</b></p>
+            <h3>Tell us what you're working on.</h3>
+            <p>A few sentences is plenty. What it is, where it stands, what's bothering you about the digital side.</p>
+            <p class="c-email" id="cEmail">hello@doersinspire.com</p>
+            <div class="c-actions">
+                <button class="btn btn-solid" id="copyEmail">COPY EMAIL</button>
+                <a class="btn btn-ghost" href="mailto:hello@doersinspire.com?subject=I%27m%20building%20something">WRITE
+                    TO US
+                    <svg class="ar" width="16" height="10" viewBox="0 0 16 10" aria-hidden="true">
+                        <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                    </svg></a>
+            </div>
+            <p class="c-note">No forms. No funnels. Just a conversation.</p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        (function () {
+            'use strict';
+            const $ = (s, c = document) => c.querySelector(s);
+            const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+            const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const FINE = matchMedia('(pointer: fine)').matches;
+            const MOTION = !REDUCED && !!(window.gsap && window.ScrollTrigger);
+            if (MOTION) { gsap.registerPlugin(ScrollTrigger); document.documentElement.classList.add('motion'); ScrollTrigger.config({ ignoreMobileResize: true }); }
+            const AR = '<svg class="ar" width="16" height="10" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor"/></svg>';
+            const CHK = '<svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4L14 3.5" fill="none" stroke="#7ADFE8" stroke-width="1.5"/></svg>';
+            const PLUS = '<svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12" fill="none" stroke="#8E7BFF" stroke-width="1.2"/></svg>';
+
+            /* ---------- toast ---------- */
+            let toastT;
+            function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 2200); }
+
+            /* ---------- nav / menu ---------- */
+            const nav = $('#nav');
+            addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), { passive: true });
+            const menuBtn = $('#menuBtn'), menu = $('#menu');
+            function setMenu(open) { menu.classList.toggle('on', open); menuBtn.setAttribute('aria-expanded', open); menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); menu.setAttribute('aria-hidden', !open); }
+            menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('on')));
+            $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+            $('#yr').textContent = new Date().getFullYear();
+            $$('[data-social],[data-legal]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); toast(a.dataset.social ? 'OPENS WITH THE REAL LAUNCH' : 'PAPERWORK COMES BEFORE LIFTOFF'); }));
+
+            /* ---------- intro + hero ---------- */
+            const heroSec = $('#hero');
+            const ds = $('#digitalSide');
+            if (ds) { ds.innerHTML = [...ds.textContent].map(c => c === ' ' ? ' ' : `<span class="ch">${c}</span>`).join(''); }
+            function heroIn() {
+                const tl = gsap.timeline();
+                tl.to('#hero .hero-title .mline', { yPercent: 0, duration: 1.25, stagger: .13, ease: 'power3.out' }, 0)
+                    .to('.hero .hi', { opacity: 1, y: 0, duration: .9, stagger: .09, ease: 'power3.out' }, .45)
+                    .to('.hero .h-label', { opacity: 1, duration: .9, stagger: .07, ease: 'power2.out' }, .7);
+                return tl;
+            }
+            function introSeq() {
+                const ov = $('#intro');
+                if (!MOTION) { ov.remove(); return; }
+                gsap.set('#hero .hero-title .mline', { yPercent: 112 });
+                gsap.set(['.hero .hi', '.hero .h-label'], { opacity: 0, y: 24 });
+                gsap.set('.h-label', { y: 0 });
+                const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+                tl.to('#intro .i-logo .mline', { yPercent: 0, duration: 1 }, .2)
+                    .to('#intro .i-tag .mline', { yPercent: 0, duration: .8 }, .75)
+                    .to('#intro .i-welcome .mline', { yPercent: 0, duration: .9 }, 1.4)
+                    .to('#intro .i-desc .mline', { yPercent: 0, duration: .9 }, 1.95)
+                    .add('out', 4.1)
+                    .to('#intro .i-welcome .mline', { yPercent: -130, letterSpacing: '.16em', duration: 1.05, ease: 'power2.in' }, 'out')
+                    .to(['#intro .i-logo .mline', '#intro .i-tag .mline'], { yPercent: -130, duration: .7, ease: 'power2.in', stagger: .07 }, 'out')
+                    .to('#intro .i-desc .mline', { opacity: 0, y: -22, duration: .6, ease: 'power2.in' }, 'out')
+                    .to('#atmoHero', { opacity: 1, duration: 2.2, ease: 'power1.out' }, 'out')
+                    .add(heroIn(), 'out+=.2')
+                    .set('#intro', { display: 'none' });
+                let done = false;
+                const skip = () => { if (!done) { done = true; tl.progress(1, false); } };
+                const evs = [['wheel', skip], ['touchstart', skip], ['keydown', skip], ['pointerdown', skip]];
+                evs.forEach(([e, f]) => addEventListener(e, f, { passive: true }));
+                tl.eventCallback('onComplete', () => evs.forEach(([e, f]) => removeEventListener(e, f)));
+            }
+            introSeq();
+
+            /* ---------- hero cursor FX ---------- */
+            if (MOTION && FINE) {
+                const chs = $$('#digitalSide .ch').map(el => ({ el, y: 0, r: 0, cx: 0, cy: 0 }));
+                let mx = -9999, my = -9999, active = false, frame = 0;
+                const measure = () => chs.forEach(o => { const r = o.el.getBoundingClientRect(); o.cx = r.left + r.width / 2; o.cy = r.top + r.height / 2; });
+                heroSec.addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; active = true; }, { passive: true });
+                heroSec.addEventListener('pointerleave', () => { active = false; });
+                gsap.ticker.add(() => {
+                    if (scrollY > innerHeight) return;
+                    if ((frame++ % 24) === 0) measure();
+                    chs.forEach(o => {
+                        const dx = o.cx - mx, dy = o.cy - my, d = Math.hypot(dx, dy);
+                        const f = active ? Math.max(0, 1 - d / 260) : 0;
+                        o.y += ((-18 * f * f) - o.y) * .14; o.r += (((dx > 0 ? 1 : -1) * 4.5 * f * f) - o.r) * .14;
+                        o.el.style.transform = `translateY(${o.y.toFixed(2)}px) rotate(${o.r.toFixed(2)}deg)`;
+                    });
+                });
+                $$('.h-label').forEach(l => {
+                    const d = parseFloat(l.dataset.depth || '.5');
+                    const qx = gsap.quickTo(l, 'x', { duration: .9, ease: 'power3' }), qy = gsap.quickTo(l, 'y', { duration: .9, ease: 'power3' });
+                    heroSec.addEventListener('pointermove', e => { qx((e.clientX / innerWidth - .5) * 44 * d); qy((e.clientY / innerHeight - .5) * 34 * d); }, { passive: true });
+                });
+            }
+
+            /* ---------- generic reveals ---------- */
+            if (MOTION) {
+                gsap.set('.msk .mline', { yPercent: 115 });
+                gsap.set('.rv', { opacity: 0, y: 26 });
+                $$('.rl').forEach(g => {
+                    const ls = $$('.mline', g);
+                    if (!ls.length) return;
+                    const sec = g.closest('[data-manual]');
+                    if (sec) return; // manual sections handle their own
+                    gsap.to(ls, {
+                        yPercent: 0, duration: 1.1, ease: 'power3.out', stagger: .1,
+                        scrollTrigger: { trigger: g, start: 'top 85%' }
+                    });
+                });
+                $$('.rv').forEach(el => {
+                    if (el.closest('[data-manual]')) return;
+                    gsap.to(el, {
+                        opacity: 1, y: 0, duration: 1, ease: 'power3.out',
+                        scrollTrigger: { trigger: el, start: 'top 88%' }
+                    });
+                });
+                $$('[data-atmo]').forEach(sec => {
+                    if (sec.id === 'eco') return;
+                    gsap.to($('.atmo', sec), {
+                        opacity: 1, ease: 'none',
+                        scrollTrigger: { trigger: sec, start: 'top 90%', end: 'top 35%', scrub: true }
+                    });
+                });
+            }
+
+            /* ---------- ecosystem ---------- */
+            const ECO_NODES = [
+                { id: 'biz', x: 50, y: 50, label: 'YOUR BUSINESS', center: true },
+                { id: 'brand', x: 24, y: 19, label: 'BRAND' },
+                { id: 'content', x: 76, y: 19, label: 'CONTENT' },
+                { id: 'website', x: 86, y: 50, label: 'WEBSITE' },
+                { id: 'search', x: 76, y: 81, label: 'SEARCH' },
+                { id: 'social', x: 24, y: 81, label: 'SOCIAL' },
+                { id: 'growth', x: 12, y: 50, label: 'GROWTH', acc: 'c' },
+                { id: 'systems', x: 50, y: 8, label: 'SYSTEMS' },
+                { id: 'ai', x: 50, y: 92, label: 'AI', acc: 'p' }
+            ];
+            const ECO_LINKS = [
+                ['biz', 'brand'], ['biz', 'content'], ['biz', 'website'], ['biz', 'search'], ['biz', 'social'], ['biz', 'growth'], ['biz', 'systems'], ['biz', 'ai'],
+                ['brand', 'content'], ['content', 'website'], ['website', 'search'], ['search', 'social'], ['social', 'brand'],
+                ['growth', 'search'], ['growth', 'social'],
+                ['systems', 'brand'], ['systems', 'content'],
+                ['ai', 'systems'], ['ai', 'growth'], ['ai', 'search']
+            ];
+            (function buildEco() {
+                const stage = $('#ecoStage'), svg = $('#ecoSvg'), NS = 'http://www.w3.org/2000/svg';
+                const pos = {}; ECO_NODES.forEach(n => pos[n.id] = n);
+                ECO_LINKS.forEach((lk, i) => {
+                    const l = document.createElementNS(NS, 'line');
+                    l.setAttribute('pathLength', '1'); l.setAttribute('class', 'eco-line');
+                    if (i % 3 === 0) l.classList.add('tc'); else if (i % 3 === 1) l.classList.add('tp');
+                    l.setAttribute('x1', pos[lk[0]].x); l.setAttribute('y1', pos[lk[0]].y);
+                    l.setAttribute('x2', pos[lk[1]].x); l.setAttribute('y2', pos[lk[1]].y);
+                    svg.appendChild(l);
+                });
+                ECO_NODES.forEach(n => {
+                    const d = document.createElement('div');
+                    d.className = 'eco-node' + (n.center ? ' eco-center' : '') + (n.acc ? ' acc-' + n.acc : '');
+                    d.id = 'eco-n-' + n.id;
+                    d.style.left = n.x + '%'; d.style.top = n.y + '%';
+                    d.innerHTML = '<i></i><b>' + n.label + '</b>';
+                    stage.appendChild(d);
+                });
+            })();
+            if (MOTION) {
+                const order = ['brand', 'content', 'website', 'search', 'social', 'growth', 'systems', 'ai'];
+                const laterOf = (a, b) => (order.indexOf(a) > order.indexOf(b)) ? a : b;
+                const linksFor = {}; order.forEach(id => linksFor[id] = []);
+                const lineKey = lk => lk[0] + lk[1];
+                const lineEls = {};
+                $$('.eco-line').forEach((l, i) => lineEls[ECO_LINKS[i].join('')] = l);
+                ECO_LINKS.forEach(lk => linksFor[laterOf(lk[0], lk[1])].push(lk));
+                const caps = $$('.eco-cap');
+                gsap.set('#ecoFinal p', { opacity: 0 });
+                gsap.set(caps, { opacity: 0, y: 12 });
+                const tl = gsap.timeline({
+                    defaults: { ease: 'power2.out' },
+                    scrollTrigger: { trigger: '.eco-pin', start: 'top top', end: '+=300%', scrub: .6, pin: true, anticipatePin: 1 }
+                });
+                gsap.set('#eco-n-biz', { opacity: 0, scale: .82 });
+                gsap.set('#eco .rl .mline', { yPercent: 115 });
+                tl.to('#eco .rl .mline', { yPercent: 0, duration: 4 }, 0)
+                    .fromTo('.eco-stage', { scale: .96 }, { scale: 1, duration: 78, ease: 'none' }, 0)
+                    .to('#eco-n-biz', { opacity: 1, scale: 1, duration: 4 }, 1);
+                const t0 = 8, step = 5.4;
+                order.forEach((id, i) => {
+                    const t = t0 + i * step;
+                    tl.fromTo('#eco-n-' + id, { opacity: 0, scale: .82 }, { opacity: 1, scale: 1, duration: 2.4 }, t)
+                        .to(linksFor[id].map(lk => lineEls[lineKey(lk)]), { strokeDashoffset: 0, duration: 3, stagger: .5, ease: 'none' }, t + .5);
+                });
+                const capAt = [[2, 11], [12, 30], [31, 43], [44, 50], [51, 56]];
+                caps.forEach((c, i) => {
+                    const [a, b] = capAt[i];
+                    tl.to(c, { opacity: 1, y: 0, duration: 2 }, a).to(c, { opacity: 0, y: -10, duration: 1.6 }, b);
+                });
+                tl.to('#eco-n-biz b', { opacity: 0, duration: 2 }, 56)
+                    .to('#ecoFinal .mline', { yPercent: 0, duration: 3.4, ease: 'power3.out' }, 56.5)
+                    .to('#ecoFinal p', { opacity: 1, duration: 2.5 }, 58.5)
+                    .to('.eco-line.tc', { stroke: 'rgba(122,223,232,.42)', duration: 6 }, 57)
+                    .to('.eco-line.tp', { stroke: 'rgba(142,123,255,.42)', duration: 6 }, 57)
+                    .to('.eco-line:not(.tc):not(.tp)', { stroke: 'rgba(236,236,241,.3)', duration: 6 }, 57)
+                    .to(order.map(id => '#eco-n-' + id), { opacity: .5, duration: 5 }, 58)
+                    .to('#atmoHero', { opacity: 1, duration: 6 }, 57)
+                    .to({}, { duration: 14 }, 64);
+            }
+
+            /* ---------- categories ---------- */
+            (function () {
+                const cats = $$('.cat'), wrap = $('#cats');
+                const setCat = c => { cats.forEach(x => { const on = x === c; x.classList.toggle('active', on); $('.cat-head', x).setAttribute('aria-expanded', on); }); wrap.classList.add('has-active'); };
+                cats.forEach(c => {
+                    c.addEventListener('mouseenter', () => { if (FINE) setCat(c); });
+                    $('.cat-head', c).addEventListener('click', () => setCat(c));
+                });
+            })();
+
+            /* ---------- questions ---------- */
+            if (MOTION) {
+                $('#questions').classList.add('q-live');
+                const pairs = $$('.q-pair'), fin = $('.q-final'), stage = $('#qStage');
+                gsap.set([...pairs, fin], { opacity: 0 });
+                const tl = gsap.timeline({
+                    defaults: { ease: 'power3.out' },
+                    scrollTrigger: { trigger: '.q-pin', start: 'top top', end: '+=430%', scrub: .5, pin: true, anticipatePin: 1 }
+                });
+                gsap.set('#questions .rl .mline', { yPercent: 115 });
+                tl.to('#questions .q-head .mline', { yPercent: 0, duration: 4 }, 0);
+                pairs.forEach((p, i) => {
+                    const t = 8 + i * 10;
+                    tl.set(p, { opacity: 1 }, t)
+                        .to($$('.mline', p), { yPercent: 0, duration: 2.4, stagger: .4 }, t)
+                        .fromTo($('.q-a', p), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 2 }, t + 2.2)
+                        .to($$('.mline', p), { yPercent: -112, duration: 2, stagger: .25, ease: 'power3.in' }, t + 6.6)
+                        .to($('.q-a', p), { opacity: 0, y: -16, duration: 1.5, ease: 'power2.in' }, t + 6.8)
+                        .set(p, { opacity: 0 }, t + 9.2);
+                });
+                const ft = 8 + pairs.length * 10;
+                tl.set(fin, { opacity: 1 }, ft)
+                    .to($$('.mline', fin), { yPercent: 0, duration: 3.5, stagger: .4 }, ft)
+                    .to($('.q-a', fin), { opacity: 1, y: 0, duration: 2.5 }, ft + 2.4)
+                    .to({}, { duration: 9 }, ft + 4);
+            }
+
+            /* ---------- builder (diagnostic) ---------- */
+            (function () {
+                const stage = $('#builderStage');
+                const TYPES = {
+                    'BUSINESS': 'A BUSINESS. Nice. Let\u2019s figure out the digital side.',
+                    'STARTUP': 'A STARTUP. Good. Let\u2019s figure out the digital side.',
+                    'BRAND': 'A BRAND. Let\u2019s give it somewhere to live.',
+                    'PRODUCT': 'A PRODUCT. Let\u2019s figure out the digital side.',
+                    'PERSONAL BRAND': 'A PERSONAL BRAND. Let\u2019s figure out the digital side.',
+                    'GROWING BUSINESS': 'A GROWING BUSINESS. Right on time.',
+                    'SOMETHING ELSE': 'SOMETHING ELSE. Usually the best ones. Let\u2019s figure out its digital side.'
+                };
+                const TYPE_KEYS = Object.keys(TYPES);
+                const QS = [
+                    { key: 'website', q: 'DO YOU HAVE A WEBSITE?', opts: ['YES', 'NO'] },
+                    { key: 'find', q: 'CAN PEOPLE FIND YOU?', opts: ['YES', 'NOT REALLY', 'I DON\u2019T KNOW'] },
+                    { key: 'enq', q: 'ARE YOU GETTING ENQUIRIES?', opts: ['YES', 'SOMETIMES', 'NO'] }
+                ];
+                const S = { type: null, answers: {}, timer: null };
+                const letter = i => String.fromCharCode(65 + i);
+                function swap(html, cb) {
+                    clearTimeout(S.timer);
+                    const go = () => {
+                        stage.innerHTML = html; if (cb) cb();
+                        if (MOTION) gsap.fromTo(stage.children, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: .65, stagger: .07, ease: 'power3.out' });
+                    };
+                    if (MOTION && stage.children.length) {
+                        gsap.to(stage.children, { opacity: 0, y: -18, duration: .3, stagger: .04, ease: 'power2.in', onComplete: go });
+                    } else go();
+                }
+                function stepType() {
+                    const rows = TYPE_KEYS.map((t, i) => `<button class="bopt" data-type="${t}"><span class="ix">${letter(i)}</span>${t}<span class="go">${AR}</span></button>`).join('');
+                    swap(`<div><p class="b-meta label"><span>QUESTION 01 / 04</span><span>PICK ONE</span></p>
+      <p class="b-q">PICK WHAT'S CLOSEST.</p><div class="bopts">${rows}</div></div>`, () => {
+                        $$('.bopt', stage).forEach(b => b.addEventListener('click', () => { S.type = b.dataset.type; stepAck(); }));
+                    });
+                }
+                function stepAck() {
+                    swap(`<div><p class="ack-big">${TYPES[S.type].split('. ')[0]}.</p>
+      <p class="ack-small">${TYPES[S.type].split('. ').slice(1).join('. ')}</p></div>`);
+                    S.timer = setTimeout(() => stepQ(0), 1500);
+                }
+                function stepQ(i) {
+                    const q = QS[i];
+                    const rows = q.opts.map((o, j) => `<button class="bopt" data-v="${o}"><span class="ix">${letter(j)}</span>${o}<span class="go">${AR}</span></button>`).join('');
+                    swap(`<div><p class="b-meta label"><span>QUESTION 0${i + 2} / 04</span><span>${S.type}</span></p>
+      <p class="b-q">${q.q}</p><div class="bopts">${rows}</div></div>`, () => {
+                        $$('.bopt', stage).forEach(b => b.addEventListener('click', () => {
+                            S.answers[q.key] = b.dataset.v;
+                            i < QS.length - 1 ? stepQ(i + 1) : stepResult();
+                        }));
+                    });
+                }
+                function stepResult() {
+                    const a = S.answers;
+                    const have = [], could = [];
+                    if (a.website === 'YES') have.push('Website'); else could.push('Website', 'Credibility');
+                    if (a.find === 'YES') have.push('Search'); else could.push('Search', 'Content');
+                    if (a.enq === 'YES') have.push('Enquiries'); else could.push('Conversion', 'Follow-up');
+                    if ((S.type === 'BRAND' || S.type === 'PERSONAL BRAND') && !could.includes('Content')) could.push('Content');
+                    const uniqC = [...new Set(could)].slice(0, 3);
+                    let move, label, href;
+                    if (a.website !== 'YES') { move = 'BUILD YOUR FOUNDATION'; label = 'A site that answers, convinces and captures.'; href = '#work'; }
+                    else if (a.find !== 'YES') { move = 'BUILD YOUR VISIBILITY'; label = 'Be findable for the things you actually do.'; href = '#do'; }
+                    else if (a.enq !== 'YES') { move = 'BUILD YOUR PIPELINE'; label = 'Turn the attention you have into enquiries.'; href = '#do'; }
+                    else { move = 'SHARPEN THE WHOLE SYSTEM'; label = 'The base works. Time to compound it.'; href = '#library'; }
+                    const ctx = [S.type, a.website === 'YES' ? 'HAS WEBSITE' : 'NO WEBSITE',
+                    a.find === 'YES' ? 'FINDABLE' : (a.find === 'NOT REALLY' ? 'HARD TO FIND' : 'VISIBILITY UNKNOWN'),
+                    a.enq === 'YES' ? 'GETTING ENQUIRIES' : (a.enq === 'SOMETIMES' ? 'SPORADIC ENQUIRIES' : 'NO ENQUIRIES')].join(' · ');
+                    const haveHTML = have.length ? have.map(h => `<div class="res-item">${CHK}${h}</div>`).join('')
+                        : '<div class="res-item miss">Not much yet — that\u2019s fine. That\u2019s what we do.</div>';
+                    swap(`<div>
+      <p class="label" style="margin-bottom:14px">( RESULT ) — <b>YOUR STARTING POINT</b></p>
+      <p class="res-ctx">${ctx}</p>
+      <div class="res-grid">
+        <div class="res-col"><h4>YOU HAVE</h4>${haveHTML}</div>
+        <div class="res-col"><h4>YOU COULD BUILD</h4>${uniqC.map(c => `<div class="res-item">${PLUS}${c}</div>`).join('')}</div>
+      </div>
+      <div class="res-move">
+        <p class="label" style="margin-bottom:16px">YOUR NEXT MOVE</p>
+        <a class="bopt" style="display:flex;border-top:1px solid var(--line);border-bottom:1px solid var(--line)" href="${href}">${move}<span class="go">${AR}</span></a>
+        <div style="display:flex;gap:26px;margin-top:30px;flex-wrap:wrap">
+          <button class="btn btn-solid" data-open-contact>START BUILDING ${AR}</button>
+          <button class="tlink" id="bReset">← START OVER</button>
+        </div>
+      </div>
+      <p class="res-note">Rule-based, not magic — a starting point, not a verdict. The real answer starts with a conversation about what you're building.</p>
+    </div>`, () => {
+                        $('#bReset', stage).addEventListener('click', () => { S.type = null; S.answers = {}; stepType(); });
+                        bindContact($('[data-open-contact]', stage));
+                    });
+                }
+                stepType();
+            })();
+
+            /* ---------- work ---------- */
+            const PROJECTS = [
+                {
+                    id: 'kiln', num: '01', name: 'KILN & CO', tags: 'BRAND · WEB · GROWTH', sector: 'CERAMICS STUDIO', year: '2024', seed: 'di-kiln-a', seed2: 'di-kiln-b',
+                    what: 'A ceramics studio with a waitlist offline and silence online.',
+                    gap: 'Kiln & Co sold out every market they attended. Online, they were invisible — no store, no story, no way to buy. The work spoke, but only to people standing in front of it.',
+                    move: 'Stop treating the studio like a stall and start treating it like a brand. A name system, a photographic language, and an editorial storefront that sells the making, not just the object.',
+                    build: 'Identity and art direction. A fast, direct storefront. A content system built around the kiln — process, firings, failures included. Email as the main channel, not an afterthought.',
+                    stat: '3.2\u00D7', statL: 'more online enquiries in the first six months. Sold-out launches replaced market dependence, and the waitlist went digital.',
+                    next: 'A second product line and a small wholesale system, built on the same foundation.'
+                },
+                {
+                    id: 'meridian', num: '02', name: 'MERIDIAN FREIGHT', tags: 'WEB · SYSTEMS · AI', sector: 'LOGISTICS OPERATOR', year: '2024', seed: 'di-meridian-a', seed2: 'di-meridian-b',
+                    what: 'A freight operator answering two-day questions with two-day speed.',
+                    gap: 'Every quote lived in a spreadsheet and a phone call. It took two days to answer what a customer asked in two minutes — and the fastest operator was losing to whoever replied first.',
+                    move: 'Stop treating quoting as admin and build it as the product: a structured quoting system with a face customers can actually use.',
+                    build: 'A quoting engine with live rates. A customer portal for tracking and documents. Internal dashboards the team actually opens. AI-assisted triage for routine email requests.',
+                    stat: '48h \u2192 20min', statL: 'quote turnaround. The team stopped doing data entry and started moving freight.',
+                    next: 'Opening the quoting API to partner agents — the system was designed for it from day one.'
+                },
+                {
+                    id: 'driftline', num: '03', name: 'DRIFTLINE', tags: 'BRAND · CONTENT · WEB', sector: 'COASTAL RETREATS', year: '2023', seed: 'di-drift-a', seed2: 'di-drift-b',
+                    what: 'A retreat people loved, on a channel the retreat didn\u2019t own.',
+                    gap: 'Eighty percent of nights went through booking platforms that owned the customer, the data and the margin. The retreat had fans and no direct relationship with any of them.',
+                    move: 'Make the direct channel worth choosing. A brand worth remembering, photography worth staying for, and a real reason to book direct.',
+                    build: 'Full identity and voice. A place-based content system — seasons, tide tables, local guides. A direct booking flow with none of the usual friction.',
+                    stat: '61%', statL: 'of bookings now come direct. Marketing spend per booking fell by a third.',
+                    next: 'A membership for returning guests — the system to run it is already in place.'
+                }
+            ];
+            (function () {
+                const list = $('#workList');
+                list.innerHTML = PROJECTS.map(p => `<button class="wk-row" data-id="${p.id}" aria-label="Open case study: ${p.name}">
+    <span class="wk-num">${p.num}</span><span class="wk-name">${p.name}</span>
+    <span class="wk-side"><span class="wk-tags">${p.tags}</span>
+    <span class="wk-view">VIEW CASE ${AR}</span></span></button>`).join('');
+                // preload preview images
+                PROJECTS.forEach(p => { const im = new Image(); im.src = `https://picsum.photos/seed/${p.seed}/720/500.jpg`; });
+                const pv = $('#workPreview'), pvImg = $('img', pv);
+                let on = false, px = 0, py = 0, tx = 0, ty = 0;
+                if (MOTION && FINE) {
+                    $$('.wk-row', list).forEach(r => {
+                        r.addEventListener('mouseenter', () => {
+                            const p = PROJECTS.find(x => x.id === r.dataset.id);
+                            pvImg.src = `https://picsum.photos/seed/${p.seed}/720/500.jpg`; pv.classList.add('on'); on = true;
+                        });
+                        r.addEventListener('mouseleave', () => { pv.classList.remove('on'); on = false; });
+                    });
+                    addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+                    gsap.ticker.add(() => {
+                        if (!on && Math.abs(tx - px) < .5) return;
+                        px += (tx - px) * .12; py += (ty - py) * .12;
+                        const rot = Math.max(-5, Math.min(5, (tx - px) * .08));
+                        pv.style.transform = `translate(${px + 28}px,${py - pv.offsetHeight / 2}px) rotate(${rot}deg)`;
+                    });
+                }
+                $$('.wk-row', list).forEach(r => r.addEventListener('click', () => openCase(r.dataset.id)));
+            })();
+            function openCase(id) {
+                const i = PROJECTS.findIndex(p => p.id === id), p = PROJECTS[i];
+                $('#caseBody').innerHTML = `
+    <div class="case-hero">
+      <div class="case-kicker label"><span>${p.num} / 03</span><span><b>${p.name}</b></span><span>${p.sector}</span><span>${p.year}</span><span>${p.tags}</span></div>
+      <h2 class="case-title">${p.name}</h2>
+      <p class="case-what">${p.what}</p>
+    </div>
+    <div class="case-img wide"><img src="https://picsum.photos/seed/${p.seed}/1600/800.jpg" alt="${p.name} — project visual" loading="lazy"></div>
+    <div class="case-body">
+      <div class="beat"><h3>THE GAP</h3><p>${p.gap}</p></div>
+      <div class="beat"><h3>THE MOVE</h3><p>${p.move}</p></div>
+      <div class="beat"><h3>THE BUILD</h3><p>${p.build}</p></div>
+    </div>
+    <div class="case-img wide"><img src="https://picsum.photos/seed/${p.seed2}/1600/800.jpg" alt="${p.name} — detail" loading="lazy"></div>
+    <div class="case-body">
+      <div class="beat"><h3>THE SHIFT</h3><div><p class="stat">${p.stat}</p><p class="stat-l">${p.statL}</p></div></div>
+      <div class="beat"><h3>WHAT'S NEXT</h3><p>${p.next}</p></div>
+    </div>
+    <div class="case-foot">
+      <button class="tlink" data-open-contact>START SOMETHING LIKE THIS ${AR}</button>
+      <button class="btn btn-ghost" id="caseNext">NEXT PROJECT ${AR}</button>
+    </div>`;
+                openOvl('#caseOvl');
+                $('#caseNext').addEventListener('click', () => openCase(PROJECTS[(i + 1) % PROJECTS.length].id));
+                bindContact($('#caseBody'));
+            }
+
+            /* ---------- library ---------- */
+            const ARTICLES = [
+                {
+                    n: '01', cat: 'PRESENCE', time: '6 MIN', title: 'Why people don\u2019t find good businesses',
+                    body: ['Most businesses aren\u2019t invisible because they\u2019re bad. They\u2019re invisible because findability was never anyone\u2019s job.', 'Being found isn\u2019t one decision — it\u2019s a stack: words on your site that match what people actually type, pages that answer real questions, a profile that\u2019s consistent everywhere, and enough patience for search engines to believe you.', 'Good businesses fail this quietly. They describe themselves the way they think about themselves — internally, vaguely, proudly — instead of the way customers search.', 'The fix is unglamorous. Write down the ten things your best customer would type at 11pm. Make sure your site says them, plainly, on pages built for them. Then keep the promises those pages make. Visibility isn\u2019t marketing magic. It\u2019s maintenance.']
+                },
+                {
+                    n: '02', cat: 'BUILD', time: '5 MIN', title: 'Do you actually need a website?',
+                    body: ['Sometimes no. If you\u2019re testing an idea, a sharp profile page and a payment link will teach you more in a week than a three-month website project.', 'But you need a website the moment any of these are true: people search for what you do, you need to explain something complex once instead of a hundred times, or other businesses check you out before working with you.', 'A website\u2019s job is not to exist. Its job is to answer, convince, or capture — ideally in that order, in about ten seconds.', 'If your current site does none of those, you don\u2019t need a redesign. You need a decision about what it\u2019s for.']
+                },
+                {
+                    n: '03', cat: 'GROW', time: '4 MIN', title: 'What makes people trust a brand?',
+                    body: ['Not the logo. Trust is built from boring, checkable things.', 'Specificity: vague claims sound like everyone; precise ones sound like experience. \u201CFast delivery\u201D is noise. \u201CShips in 48 hours, tracked\u201D is a promise.', 'Evidence: photos of real work, names of real clients, numbers you can stand behind. Consistency: the same voice on the invoice, the caption and the support reply — trust collapses where the personality changes.', 'And time, honestly. Brands are compounds, not sparks. If you want to be trusted faster, say something precise, show the proof, and repeat it longer than feels necessary.']
+                },
+                {
+                    n: '04', cat: 'AI', time: '7 MIN', title: 'Where AI actually helps a business',
+                    body: ['Strip away the demos and AI currently earns its keep in four places.', 'Drafting: first versions of emails, descriptions and posts — written by a machine, finished by you. Research: summarising documents and turning messy piles of information into a starting brief. Support: answering the twenty questions you answer every week and routing the rest to a human. Ops glue: reading, sorting and moving information between systems that were never designed to talk.', 'Where it doesn\u2019t help: deciding your positioning, your taste, and who to trust. That\u2019s still you.', 'The businesses winning with AI aren\u2019t the ones using it most. They automated the repetitive 30% and reinvested the time in the work only they can do.']
+                },
+                {
+                    n: '05', cat: 'SYSTEMS', time: '5 MIN', title: 'What should a business automate first?',
+                    body: ['Not the exciting stuff. The first automation candidates share three signs: you do them weekly, the steps never change, and mistakes cost you money.', 'For most businesses that means follow-ups (enquiries that never got a second reply), invoicing and reminders, reporting someone rebuilds by hand every Monday, and onboarding checklists living in someone\u2019s head.', 'Rule of thumb: if you\u2019ve explained it twice the same way, it\u2019s a system. If you\u2019ve done it thirty times identically, it\u2019s an automation.', 'Start with one. Document it, automate it, notice what breaks — that\u2019s where the next one is hiding. Automation isn\u2019t about doing less work. It\u2019s about making sure the work only you can do is what\u2019s left.']
+                },
+                {
+                    n: '06', cat: 'THINK', time: '4 MIN', title: 'What makes people remember a brand?',
+                    body: ['Memory is unfair. People don\u2019t remember the best product; they remember the most distinct one.', 'Three things survive contact with a crowded market: a point of view (what you believe that competitors don\u2019t say), a repeatable shape (a way of speaking, a visual tic, a ritual in how you deliver), and repetition (the discipline to stay the same longer than you got bored of it).', 'Most brands have none of the three, because consistency feels boring from the inside. From the outside it reads as reliability — and reliability is what memory is made of.', 'Decide what you want to be known for. Then resist the urge to say anything else.']
+                }
+            ];
+            (function () {
+                const list = $('#libList'), tabs = $('#libTabs');
+                const areas = ['ALL', 'BUILD', 'PRESENCE', 'GROW', 'SYSTEMS', 'AI', 'THINK'];
+                tabs.innerHTML = areas.map((a, i) => `<button class="lib-tab${i === 0 ? ' on' : ''}" role="tab" aria-selected="${i === 0}" data-a="${a}">${a}</button>`).join('');
+                function render(filter) {
+                    list.innerHTML = ARTICLES.filter(a => filter === 'ALL' || a.cat === filter)
+                        .map(a => `<button class="lib-row" data-n="${a.n}" aria-label="Read: ${a.title}">
+        <span class="lib-num">${a.n}</span><span class="lib-cat">${a.cat}</span>
+        <span class="lib-title">${a.title}</span><span class="lib-meta">${a.time} READ</span></button>`).join('');
+                    $$('.lib-row', list).forEach(r => r.addEventListener('click', () => {
+                        const a = ARTICLES.find(x => x.n === r.dataset.n);
+                        $('#readBody').innerHTML = `<span class="label">${a.n} — <b>${a.cat}</b> · ${a.time} READ</span>
+        <h2 class="read-title">${a.title}</h2>
+        <div class="read-essay">${a.body.map(p => `<p>${p}</p>`).join('')}</div>
+        <div class="read-foot"><button class="btn btn-ghost" data-open-contact>PUT THIS TO WORK ${AR}</button></div>`;
+                        openOvl('#readOvl');
+                        bindContact($('#readBody'));
+                    }));
+                }
+                render('ALL');
+                $$('.lib-tab', tabs).forEach(t => t.addEventListener('click', () => {
+                    $$('.lib-tab', tabs).forEach(x => { x.classList.toggle('on', x === t); x.setAttribute('aria-selected', x === t); });
+                    if (MOTION) gsap.fromTo('.lib-row', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .5, stagger: .05, ease: 'power2.out' });
+                    render(t.dataset.a);
+                }));
+            })();
+
+            /* ---------- overlays / modal ---------- */
+            let lastFocus = null;
+            function openOvl(sel) {
+                lastFocus = document.activeElement;
+                const o = $(sel); o.classList.add('on'); document.body.style.overflow = 'hidden';
+                $('.ovl-scroll', o).scrollTop = 0;
+                const c = $('[data-close]', o); if (c) c.focus();
+            }
+            function closeOvls() {
+                $$('.ovl.on,.modal.on').forEach(o => o.classList.remove('on'));
+                document.body.style.overflow = '';
+                if (lastFocus) lastFocus.focus();
+            }
+            function bindContact(scope) {
+                $$('[data-open-contact]', scope || document).forEach(b => {
+                    if (b._b) return; b._b = true;
+                    b.addEventListener('click', e => { e.preventDefault(); closeOvls(); $('#contactModal').classList.add('on'); document.body.style.overflow = 'hidden'; $('#copyEmail').focus(); });
+                });
+            }
+            bindContact();
+            $$('[data-close]').forEach(b => b.addEventListener('click', closeOvls));
+            addEventListener('keydown', e => { if (e.key === 'Escape') closeOvls(); });
+            $('#copyEmail').addEventListener('click', () => {
+                const t = $('#cEmail').textContent;
+                (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(
+                    () => toast('EMAIL COPIED'),
+                    () => toast(t));
+            });
+
+            /* ---------- magnetic CTAs ---------- */
+            if (MOTION && FINE) {
+                $$('.magnet').forEach(b => {
+                    b.addEventListener('mousemove', e => {
+                        const r = b.getBoundingClientRect();
+                        gsap.to(b, { x: (e.clientX - r.left - r.width / 2) * .14, y: (e.clientY - r.top - r.height / 2) * .26, duration: .5, ease: 'power3.out' });
+                    });
+                    b.addEventListener('mouseleave', () => gsap.to(b, { x: 0, y: 0, duration: .6, ease: 'power3.out' }));
+                });
+            }
+            if (MOTION && document.fonts) document.fonts.ready.then(() => ScrollTrigger.refresh());
+        })();
+    </script>
+</body>
+
+</html>

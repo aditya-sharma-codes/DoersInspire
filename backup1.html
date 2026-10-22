@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOERS INSPIRE — Creative Technology Studio | We Build the Digital Side</title>
+    <meta name="description"
+        content="DOERS INSPIRE is a creative technology studio. We build high-performance digital systems, custom frontends, and spatial brand destinations for visionary businesses.">
+    <meta name="keywords"
+        content="Doers Inspire, Creative Technology, Digital Studio, Web Architecture, Next.js, High Performance Websites, Brand Engineering">
+    <meta name="author" content="DOERS INSPIRE">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://doersinspire.com">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://doersinspire.com">
+    <meta property="og:title" content="DOERS INSPIRE — Creative Technology Studio">
+    <meta property="og:description"
+        content="You build. We build the digital side. High-precision digital systems and brand destinations.">
+    <meta property="og:image" content="assets/logo-mark.png">
+    <meta property="og:site_name" content="DOERS INSPIRE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DOERS INSPIRE — Creative Technology Studio">
+    <meta name="twitter:description"
+        content="You build. We build the digital side. High-precision digital systems and brand destinations.">
+    <meta name="twitter:image" content="assets/logo-mark.png">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-icon.png">
+    <link rel="apple-touch-icon" href="assets/logo-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- GSAP & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- 01 — INTRO -->
+    <div id="intro" role="dialog" aria-label="Welcome Sequence">
+        <div>
+            <div class="i-logo msk">
+                <span class="mline" style="display:inline-flex; align-items:center; gap:16px;">
+                    <img src="assets/logo-icon.png" alt="" class="i-logo-icon" style="height:1em; width:auto;">
+                    DOERS INSPIRE
+                </span>
+            </div>
+            <div class="i-tag msk"><span class="mline">CREATIVE TECHNOLOGY STUDIO</span></div>
+            <div class="i-welcome msk"><span class="mline">We build the digital side of businesses.</span></div>
+            <div class="i-desc msk"><span class="mline">Scroll or click to skip straight into the studio.</span></div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="nav" id="nav">
+        <a href="#top" class="brand" aria-label="DOERS INSPIRE — Home">
+            <img src="assets/logo-icon.png" alt="" class="brand-icon">
+            DOERS <span>INSPIRE</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary Navigation">
+            <a href="#work">WORK</a>
+            <a href="#library">LIBRARY</a>
+            <a href="#about">ABOUT</a>
+        </nav>
+        <div style="display:flex;gap:14px;align-items:center">
+            <button class="nav-cta magnet" data-open-contact>START BUILDING
+                <svg class="ar" width="14" height="9" viewBox="0 0 16 10" aria-hidden="true">
+                    <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                </svg>
+            </button>
+            <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu"
+                aria-label="Open menu"><i></i><i></i></button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="menu" id="menu" aria-hidden="true">
+        <a href="#work">WORK <small>07</small></a>
+        <a href="#library">LIBRARY <small>08</small></a>
+        <a href="#about">ABOUT <small>09</small></a>
+        <a href="#build">START BUILDING <small>→</small></a>
+        <p class="label">GOOD WORK DESERVES TO BE SEEN.</p>
+    </div>
+
+    <main id="top">
+        <!-- SCREEN 02 — HERO -->
+        <section id="hero" class="hero" data-manual data-atmo>
+            <div class="atmo" id="atmoHero"></div>
+            <span class="h-label" data-depth=".7" style="top:17%;left:6%">BRAND</span>
+            <span class="h-label" data-depth=".45" style="top:15%;right:9%">CONTENT</span>
+            <span class="h-label" data-depth=".6" style="top:46%;left:3.5%">SOCIAL</span>
+            <span class="h-label" data-depth=".4" style="top:44%;right:4%">WEB</span>
+            <span class="h-label" data-depth=".55" style="bottom:20%;left:16%">SEARCH</span>
+            <span class="h-label" data-depth=".5" style="bottom:15%;right:17%">GROWTH</span>
+
+            <div class="wrap">
+                <div class="hero-grid hi">
+                    <p class="label">( 01 ) — <b>A CREATIVE TECHNOLOGY STUDIO</b></p>
+                    <p class="label">FOR PEOPLE BUILDING<br>SOMETHING REAL</p>
+                </div>
+                <h1 class="hero-title">
+                    <span class="rl"><span class="msk"><span class="mline">YOU BUILD.</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">WE BUILD THE</span></span></span>
+                    <span class="rl ind"><span class="msk"><span class="mline" id="digitalSide">DIGITAL
+                                SIDE.</span></span></span>
+                </h1>
+                <div class="hero-foot">
+                    <div class="hi">
+                        <p class="hero-copy"><strong>We build the digital side of businesses</strong> — from brand and
+                            content to websites, growth, systems and AI. For businesses, founders, creators and people
+                            building something real.</p>
+                        <p class="caps-line hi" style="margin-top:22px">
+                            BRAND<i>·</i>CONTENT<i>·</i>WEBSITE<i>·</i>GROWTH<i>·</i>SYSTEMS<i>·</i>AI</p>
+                    </div>
+                    <div class="hero-ctas hi">
+                        <a class="btn btn-solid magnet" href="#build">WHAT ARE YOU BUILDING?
+                            <svg class="ar" width="16" height="10" viewBox="0 0 16 10" aria-hidden="true">
+                                <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                            </svg></a>
+                        <a class="btn btn-ghost magnet" href="#work">SEE WHAT WE BUILD
+                            <svg class="ar" width="16" height="10" viewBox="0 0 16 10" aria-hidden="true">
+                                <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-cue hi" aria-hidden="true"><span class="label" style="font-size:9px">SCROLL</span><i></i>
+            </div>
+        </section>
+
+        <!-- SCREEN 03 — DIGITAL ECOSYSTEM -->
+        <section id="eco" data-manual>
+            <div class="eco-pin">
+                <p class="sec-tag label">( 03 ) — <b>THE DIGITAL SIDE</b></p>
+                <div class="eco-stage" id="ecoStage">
+                    <svg class="eco-svg" id="ecoSvg" viewBox="0 0 100 100" preserveAspectRatio="none"
+                        aria-hidden="true"></svg>
+                    <div class="eco-final" id="ecoFinal" aria-hidden="true">
+                        <span class="msk"><span class="mline">ONE DIGITAL SIDE.</span></span>
+                        <p>Everything works better when it works together.</p>
+                    </div>
+                </div>
+                <div class="eco-caps" aria-hidden="true">
+                    <p class="eco-cap">EVERY BUSINESS STARTS AS ONE THING.</p>
+                    <p class="eco-cap">THEN IT NEEDS A FACE. A VOICE. A HOME.</p>
+                    <p class="eco-cap">THEN IT NEEDS TO BE FOUND — AND TO GROW.</p>
+                    <p class="eco-cap">THEN IT NEEDS TO RUN WITHOUT FRICTION.</p>
+                    <p class="eco-cap">THEN IT STARTS TO LEARN.</p>
+                </div>
+                <div class="eco-static">
+                    <b>ONE DIGITAL SIDE.</b>
+                    <p>Everything works better when it works together.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 04 — WHAT DO WE DO -->
+        <section id="do" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 04 ) — <b>CAPABILITIES</b></p>
+                <h2 class="display-xl" style="margin-top:28px">
+                    <span class="rl"><span class="msk"><span class="mline">SO…</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">WHAT DO WE</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">ACTUALLY DO?</span></span></span>
+                </h2>
+                <div class="cats" id="cats">
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">01</span><span class="cat-name">PRESENCE</span>
+                            <span class="cat-tagline">MAKE YOUR BUSINESS VISIBLE.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>Brand</li>
+                                            <li>Content</li>
+                                            <li>Website</li>
+                                            <li>Social</li>
+                                            <li>Search</li>
+                                        </ul>
+                                        <p class="cat-note">If people can't find you, they can't choose you. We build
+                                            the face, the voice and the home your business shows to the world.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <circle cx="60" cy="60" r="20" />
+                                            <circle cx="60" cy="60" r="38" />
+                                            <circle cx="60" cy="60" r="54" />
+                                            <g class="vz-sweep">
+                                                <line x1="60" y1="60" x2="60" y2="6" />
+                                                <circle class="ad" cx="60" cy="12" r="3" />
+                                            </g>
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">02</span><span class="cat-name">GROWTH</span>
+                            <span class="cat-tagline">TURN VISIBILITY INTO OPPORTUNITY.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>SEO</li>
+                                            <li>Campaigns</li>
+                                            <li>Ads</li>
+                                            <li>Funnels</li>
+                                            <li>Conversion</li>
+                                        </ul>
+                                        <p class="cat-note">Attention is only step one. We build the paths that turn
+                                            strangers into enquiries — and enquiries into work.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <path class="vz-draw" d="M10 96 L44 62 L70 78 L110 26" />
+                                            <circle class="ap" cx="110" cy="26" r="3.5" />
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">03</span><span class="cat-name">SYSTEMS</span>
+                            <span class="cat-tagline">MAKE THE DIGITAL SIDE WORK BETTER.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>CRM</li>
+                                            <li>Automation</li>
+                                            <li>Workflows</li>
+                                            <li>Analytics</li>
+                                        </ul>
+                                        <p class="cat-note">The unglamorous layer that makes everything else scale. Less
+                                            copying, less chasing, fewer things falling through.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <rect x="12" y="16" width="32" height="22" />
+                                            <rect x="76" y="16" width="32" height="22" />
+                                            <rect x="44" y="82" width="32" height="22" />
+                                            <line class="vz-flow" x1="44" y1="27" x2="76" y2="27" />
+                                            <path class="vz-flow" d="M28 38 L28 60 L52 60 L52 82" />
+                                            <path class="vz-flow" d="M92 38 L92 60 L68 60 L68 82" />
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">04</span><span class="cat-name">AI</span>
+                            <span class="cat-tagline">PUT AI TO WORK.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>Research</li>
+                                            <li>Content</li>
+                                            <li>Support</li>
+                                            <li>Agents</li>
+                                            <li>Automation</li>
+                                        </ul>
+                                        <p class="cat-note">No demos, no hype. We find the repetitive 30% of your
+                                            operation and hand it to machines — so people do the part only they can.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <line x1="60" y1="18" x2="60" y2="102" />
+                                            <line x1="18" y1="60" x2="102" y2="60" />
+                                            <circle cx="60" cy="18" r="3" />
+                                            <circle cx="102" cy="60" r="3" />
+                                            <circle cx="60" cy="102" r="3" />
+                                            <circle cx="18" cy="60" r="3" />
+                                            <circle class="ap vz-core" cx="60" cy="60" r="5" />
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cat">
+                        <button class="cat-head" aria-expanded="false">
+                            <span class="cat-num">05</span><span class="cat-name">THINK</span>
+                            <span class="cat-tagline">UNDERSTAND BEFORE YOU BUILD.</span><span class="cat-x"
+                                aria-hidden="true"></span>
+                        </button>
+                        <div class="cat-body">
+                            <div class="cat-inner">
+                                <div class="cat-grid"><span></span>
+                                    <div>
+                                        <ul class="cat-list">
+                                            <li>Business</li>
+                                            <li>Psychology</li>
+                                            <li>Technology</li>
+                                            <li>Experiments</li>
+                                        </ul>
+                                        <p class="cat-note">Every build starts with questions, not deliverables. What's
+                                            actually broken, what's actually working, what's worth doing at all.</p>
+                                    </div>
+                                    <div class="cat-viz" aria-hidden="true"><svg viewBox="0 0 120 120">
+                                            <rect x="38" y="38" width="44" height="44" transform="rotate(45 60 60)" />
+                                            <g class="vz-orbit">
+                                                <circle class="ad" cx="60" cy="14" r="3" />
+                                            </g>
+                                            <circle cx="60" cy="60" r="3" />
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 05 — GOT A QUESTION -->
+        <section id="questions" data-manual>
+            <div class="q-pin">
+                <p class="sec-tag label" style="position:static;margin-bottom:26px">( 05 ) — <b>QUESTIONS</b></p>
+                <h2 class="q-head rl"><span class="msk"><span class="mline">GOT A QUESTION?</span></span></h2>
+                <div class="q-stage" id="qStage">
+                    <div class="q-pair">
+                        <p class="q-count">Q.01 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">HOW SHOULD</span></span><span
+                                class="msk"><span class="mline">MY BRAND LOOK?</span></span></h3>
+                        <p class="q-a">Let's shape it.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.02 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">WHAT</span></span><span class="msk"><span
+                                    class="mline">SHOULD I SAY?</span></span></h3>
+                        <p class="q-a">Let's find your voice.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.03 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">DO I NEED</span></span><span
+                                class="msk"><span class="mline">A WEBSITE?</span></span></h3>
+                        <p class="q-a">Let's figure it out.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.04 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">WHY AREN'T PEOPLE</span></span><span
+                                class="msk"><span class="mline">FINDING ME?</span></span></h3>
+                        <p class="q-a">Let's fix the visibility.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.05 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">HOW DO I GET</span></span><span
+                                class="msk"><span class="mline">MORE ENQUIRIES?</span></span></h3>
+                        <p class="q-a">Let's build the path.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.06 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">SHOULD I</span></span><span
+                                class="msk"><span class="mline">RUN ADS?</span></span></h3>
+                        <p class="q-a">Let's find where they help.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.07 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">WHAT CAN</span></span><span
+                                class="msk"><span class="mline">I AUTOMATE?</span></span></h3>
+                        <p class="q-a">Let's build the system.</p>
+                    </div>
+                    <div class="q-pair">
+                        <p class="q-count">Q.08 / 08</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">WHERE CAN</span></span><span
+                                class="msk"><span class="mline">AI HELP?</span></span></h3>
+                        <p class="q-a">Let's put it to work.</p>
+                    </div>
+                    <div class="q-final">
+                        <p class="q-count">—</p>
+                        <h3 class="q-q"><span class="msk"><span class="mline">GOOD.</span></span></h3>
+                        <p class="q-a">That's where building starts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 06 — DIAGNOSTIC -->
+        <section id="build" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 06 ) — <b>YOUR STARTING POINT</b></p>
+                <h2 class="display-lg" style="margin-top:28px">
+                    <span class="rl"><span class="msk"><span class="mline">WHAT ARE</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">YOU BUILDING?</span></span></span>
+                </h2>
+                <div class="builder">
+                    <div class="builder-stage" id="builderStage" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 07 — WORK -->
+        <section id="work" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 07 ) — <b>SELECTED WORK</b></p>
+                <h2 class="display-xl" style="margin-top:28px">
+                    <span class="rl"><span class="msk"><span class="mline">THINGS WE'VE BUILT.</span></span></span>
+                </h2>
+                <p class="sub rv">Real work. Real decisions. Real outcomes.</p>
+                <div class="work-list" id="workList"></div>
+            </div>
+        </section>
+
+        <!-- SCREEN 08 — LIBRARY -->
+        <section id="library" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 08 ) — <b>THE LIBRARY</b></p>
+                <h2 class="display-lg" style="margin-top:28px">
+                    <span class="rl"><span class="msk"><span class="mline">THE DOERS LIBRARY</span></span></span>
+                </h2>
+                <p class="sub rv">Things worth knowing when you're building.</p>
+                <div class="lib-tabs" id="libTabs" role="tablist" aria-label="Filter library"></div>
+                <div class="lib-list" id="libList"></div>
+            </div>
+        </section>
+
+        <!-- SCREEN 09 — ABOUT -->
+        <section id="about">
+            <div class="wrap">
+                <p class="sec-tag label" style="position:static">( 09 ) — <b>ABOUT</b></p>
+                <div class="about-grid">
+                    <div class="about-meta rv">
+                        <span class="label">A SMALL STUDIO<br>OF DOERS</span>
+                        <span class="label" style="color:var(--faint)">WORKING WITH BUSINESSES<br>EVERYWHERE</span>
+                    </div>
+                    <div class="about-txt">
+                        <p class="rl"><span class="msk"><span class="mline">Doers Inspire exists because good work kept
+                                    going unseen. Decent businesses, real skill, nothing to show for it
+                                    online.</span></span></p>
+                        <p class="rv">So we build the digital side — the brand, the site, the content, the systems, the
+                            AI — while you keep building the real thing. No account managers. No decks that go nowhere.
+                    </div>
+                </div>
+                <div class="social-eco-wrap" id="socialEco">
+                    <div class="se-stage" id="seStage">
+                        <div class="se-header-overlay rv">
+                            <p class="sec-tag label" style="position:static">( CONNECT ) &mdash; <b>SOCIAL ECOSYSTEM</b>
+                            </p>
+                            <h3 class="display-sm" style="margin-top:14px">ONE BRAND.<br>MULTIPLE <b>PLATFORMS.</b></h3>
+                            <p class="sub" style="color:var(--muted); margin-top:10px; max-width: 320px;">One connected
+                                ecosystem. Find us where you build.</p>
+                        </div>
+                        <svg class="se-svg" id="seSvg" aria-hidden="true"></svg>
+                        <div class="se-center-node" id="seCenter">
+                            <img src="assets/logo-icon.png" alt="DOERS INSPIRE Logo" class="se-center-logo">
+                            <span class="se-center-title">DOERS <b>INSPIRE</b></span>
+                            <span class="se-center-sub">HUB</span>
+                        </div>
+                        <div class="se-nodes" id="seNodes"></div>
+                        <div class="se-bottom-bar">
+                            <span class="se-bar-line"></span>
+                            <span class="se-bar-text">CONTENT &nbsp;&bull;&nbsp; CONVERSATIONS &nbsp;&bull;&nbsp;
+                                COMMUNITY &nbsp;&bull;&nbsp; GROWTH</span>
+                            <span class="se-bar-line"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 10 — FINAL -->
+        <section id="final" data-atmo>
+            <div class="atmo"></div>
+            <div class="wrap">
+                <p class="logo-sm rv">DOERS INSPIRE</p>
+                <p class="f-so rl"><span class="msk"><span class="mline">SO…</span></span></p>
+                <h2 class="f-q">
+                    <span class="rl"><span class="msk"><span class="mline">WHAT ARE</span></span></span>
+                    <span class="rl"><span class="msk"><span class="mline">YOU BUILDING?</span></span></span>
+                </h2>
+                <p class="f-copy rv">Tell us what you're working on.</p>
+                <button class="btn btn-solid magnet rv" data-open-contact>START BUILDING
+                    <svg class="ar" width="16" height="10" viewBox="0 0 16 10" aria-hidden="true">
+                        <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                    </svg></button>
+                <div class="f-statement">
+                    <p class="rl"><span class="msk"><span class="mline">YOU BUILD THE REAL THING.</span></span></p>
+                    <p class="rl"><span class="msk"><span class="mline">WE BUILD THE DIGITAL SIDE.</span></span></p>
+                </div>
+                <p class="logo-end rv">DOERS INSPIRE</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="foot-grid">
+            <div class="foot-brand">
+                <a href="#top" class="brand" style="display:inline-flex; align-items:center; gap:10px;">
+                    <img src="assets/logo-icon.png" alt="" class="brand-icon">
+                    <span>DOERS <span>INSPIRE</span></span>
+                </a>
+                <p>Good work deserves to be seen.</p>
+            </div>
+            <div class="foot-col">
+                <h5>STUDIO</h5>
+                <a href="#work">WORK</a>
+                <a href="#library">LIBRARY</a>
+                <a href="#about">ABOUT</a>
+            </div>
+            <div class="foot-col">
+                <h5>CONNECT</h5>
+                <a href="#" data-open-contact>START BUILDING →</a>
+                <a href="#" data-social>LINKEDIN</a>
+                <a href="#" data-social>INSTAGRAM</a>
+                <a href="#" data-social>X</a>
+            </div>
+        </div>
+        <div class="foot-base">
+            <span>© <span id="yr">2026</span> DOERS INSPIRE</span>
+            <span><a href="#" data-legal>PRIVACY</a> &nbsp;·&nbsp; <a href="#" data-legal>TERMS</a></span>
+        </div>
+    </footer>
+
+    <!-- FLOATING WORK PREVIEW -->
+    <div class="work-preview" id="workPreview" aria-hidden="true"><img alt=""></div>
+
+    <!-- CASE STUDY OVERLAY -->
+    <div class="ovl" id="caseOvl" role="dialog" aria-modal="true" aria-label="Case study">
+        <div class="ovl-scroll" id="caseScroll">
+            <div class="ovl-bar"><span class="label">DOERS <b>INSPIRE</b> — CASE STUDY</span>
+                <button class="ovl-close" data-close>CLOSE
+                    <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                        <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" />
+                    </svg></button>
+            </div>
+            <div id="caseBody"></div>
+        </div>
+    </div>
+
+    <!-- READING OVERLAY -->
+    <div class="ovl" id="readOvl" role="dialog" aria-modal="true" aria-label="Library article">
+        <div class="ovl-scroll">
+            <div class="ovl-bar"><span class="label">DOERS <b>INSPIRE</b> — LIBRARY</span>
+                <button class="ovl-close" data-close>CLOSE
+                    <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                        <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" />
+                    </svg></button>
+            </div>
+            <div class="read-body" id="readBody"></div>
+        </div>
+    </div>
+
+    <!-- CONTACT MODAL -->
+    <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-label="Start building">
+        <div class="modal-card">
+            <button class="x" data-close aria-label="Close">CLOSE ×</button>
+            <p class="label">( → ) — <b>START BUILDING</b></p>
+            <h3>Tell us what you're working on.</h3>
+            <p>A few sentences is plenty. What it is, where it stands, what's bothering you about the digital side.</p>
+            <p class="c-email" id="cEmail">hello@doersinspire.com</p>
+            <div class="c-actions">
+                <button class="btn btn-solid" id="copyEmail">COPY EMAIL</button>
+                <a class="btn btn-ghost" href="mailto:hello@doersinspire.com?subject=I%27m%20building%20something">WRITE
+                    TO US
+                    <svg class="ar" width="16" height="10" viewBox="0 0 16 10" aria-hidden="true">
+                        <path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" />
+                    </svg></a>
+            </div>
+            <p class="c-note">No forms. No funnels. Just a conversation.</p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+</body>
+
+</html>
